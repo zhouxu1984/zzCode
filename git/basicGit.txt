@@ -1,0 +1,9 @@
+// git 安装后配置
+git config --global user.name "Your Name"    // global参数表示对本机所有git仓库有效
+git config --global user.email "email@example.com"
+
+// 创建版本库，windows目录路径确保不含中文
+git init
+
+// 把文件添加到版本库
+git add xxx.xx
