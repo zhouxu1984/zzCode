@@ -17,4 +17,7 @@ git log
 git reset --hard HEAD^    // 回退到上一个版本， HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上个版本，HEAD~100表示上100个版本。
 git reset --hard <commit_id>    // commit_id为log里显示的版本号前几位，一般5位就够了
 git reflog   // 包含reset的log日志都会列出
+git checkout -- xxx.xx   // 丢弃掉工作区的修改，git add过的内容不会撤销， --不能省。
+git reset HEAD xxx.xx    // 撤销掉已经add到暂存区的修改，unstage
+
 
