@@ -45,5 +45,10 @@ git merge dev   // 将dev分支的修改合并到当前分支, 默认会用Fast 
 git branch -d dev   // 删掉dev分支
 git merge --no-ff -m "message"  dev // --no-ff 表示禁用Fast forward模式,用普通模式合并，合并后的历史有分支，能看出曾经做过合并
 
-test merge --no-ff
+git stash  // 能够将所有未提交的修改（工作区和暂存区）保存至堆栈中，用于后续恢复当前工作目录。
+git stash list  // 查看保存过的堆栈列表
+git stash pop   // 恢复刚保存过的堆栈并把stash内容清除
+git stash apply + git stash drop   // 恢复stash 并删除，同上
+git stash apply stash@{0}    //  多次stash后，恢复到指定stash
 
+git cherry-pick <commit_id>   // 复制指定提交到当前分支，比如同步某bug的解决
