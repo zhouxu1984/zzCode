@@ -6,4 +6,9 @@ git config --global user.email "email@example.com"
 git init
 
 // 把文件添加到版本库
-git add xxx.xx
+git add xxx.xx   or  git add <folderName>/      // 添加目录带不带/都行，目录里的文件都会添加
+git commit -m "message"
+
+// 查看工作目录提交状态
+git status
+git diff xxx.xx
