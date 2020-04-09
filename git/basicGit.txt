@@ -16,9 +16,10 @@ git diff HEAD -- xxx.xx  // 查看工作区和版本库里面最新版本的区�
 git log
 git reset --hard HEAD^    // 回退到上一个版本， HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上个版本，HEAD~100表示上100个版本。
 git reset --hard <commit_id>    // commit_id为log里显示的版本号前几位，一般5位就够了
-git reflog   // 包含reset的log日志都会列出
+git reflog   // 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
 git checkout -- xxx.xx   // 丢弃掉工作区的修改，git add过的内容不会撤销， --不能省。
 git reset HEAD xxx.xx    // 撤销掉已经add到暂存区的修改，unstage, 修改回到工作区。
+git log --graph --pretty=oneline --abbrev-commit   // --graph 可以看到merge等点线图，--abbrev-commit  id仅显示前几个字符
 
 
 // 把文件从版本库中删除
