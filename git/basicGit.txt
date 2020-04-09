@@ -45,5 +45,5 @@ git merge dev   // 将dev分支的修改合并到当前分支, 默认会用Fast 
 git branch -d dev   // 删掉dev分支
 git merge --no-ff -m "message"  dev // --no-ff 表示禁用Fast forward模式,用普通模式合并，合并后的历史有分支，能看出曾经做过合并
 
-
+test merge --no-ff
 
