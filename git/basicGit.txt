@@ -37,6 +37,10 @@ git clone git@github.com:zhouxu1984/zzCode.git
 // 分支管理
 git checkout -b dev    // 创建并切换到dev分支  -b表示创建并切换
 git branch dev   &   git checkout dev    // 同上
+git switch -c dev   // 同上
+git switch dev // 同git checkout dev
 git branch   // 查看当前分支
+git merge dev   // 将dev分支的修改合并到当前分支
+git branch -d dev   // 删掉dev分支
 
 
