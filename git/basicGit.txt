@@ -29,11 +29,11 @@ git rm xxx.xx   然后提交
 // 创建SSH Key, 本地git仓库和远程github等仓库之间的传输是通过SSH加密的
 ssh-keygen -t rsa -C "youremail@example.com"    然后一路回车，使用默认值即可，用户主目录里会产生.ssh目录，里面有id_rsa和id_rsa_pub，SSH Key的密钥对，pub是公钥，需添加到远程服务器上
 // 本地仓库关联远程库，并推送到远程库
-git remote add origin git@github.com:zhouxu1984/zzCode.git   // 远程库的名字是origin，默认，可以改
+git remote add origin <远程仓库地址>   // 远程库的名字是origin，默认，可以改
 git push -u origin master   // 把当前分支master推送到远程， -u参数把本地master分支和远程的master分支进行关联，方便以后操作
 git push origin master  // 把本地修改推送到远程
 // 克隆远程库
-git clone git@github.com:zhouxu1984/zzCode.git
+git clone <远程仓库地址>
 
 // 分支管理
 git checkout -b dev    // 创建并切换到dev分支  -b表示创建并切换
@@ -41,8 +41,9 @@ git branch dev   &   git checkout dev    // 同上
 git switch -c dev   // 同上
 git switch dev // 同git checkout dev
 git branch   // 查看当前分支
-git merge dev   // 将dev分支的修改合并到当前分支
+git merge dev   // 将dev分支的修改合并到当前分支, 默认会用Fast forward模式合并，删除分支会丢掉分支信息
 git branch -d dev   // 删掉dev分支
+git merge --no-ff -m "message"  dev // --no-ff 表示禁用Fast forward模式,用普通模式合并，合并后的历史有分支，能看出曾经做过合并
 
 
 
