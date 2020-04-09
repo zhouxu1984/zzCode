@@ -9,9 +9,12 @@ git init
 git add xxx.xx   or  git add <folderName>/      // 添加目录带不带/都行，目录里的文件都会添加
 git commit -m "message"
 
-// 查看工作区状态
+// 查看工作区状态、日志和版本回退
 git status
-git diff xxx.xx
-
-// 查看日志及版本回退
+git diff xxx.xx          // 对比工作区和暂存区之间的差别
+git diff HEAD -- xxx.xx  // 查看工作区和版本库里面最新版本的区别
 git log
+git reset --hard HEAD^    // 回退到上一个版本， HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上个版本，HEAD~100表示上100个版本。
+git reset --hard <commit_id>    // commit_id为log里显示的版本号前几位，一般5位就够了
+git reflog   // 包含reset的log日志都会列出
+
