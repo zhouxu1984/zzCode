@@ -9,6 +9,9 @@ git init
 git add xxx.xx   or  git add <folderName>/      // 添加目录带不带/都行，目录里的文件都会添加
 git commit -m "message"
 
-// 查看工作目录提交状态
+// 查看工作区状态
 git status
 git diff xxx.xx
+
+// 查看日志及版本回退
+git log
