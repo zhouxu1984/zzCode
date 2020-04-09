@@ -31,5 +31,8 @@ ssh-keygen -t rsa -C "youremail@example.com"    然后一路回车，使用默�
 git remote add origin git@github.com:zhouxu1984/zzCode.git   // 远程库的名字是origin，默认，可以改
 git push -u origin master   // 把当前分支master推送到远程， -u参数把本地master分支和远程的master分支进行关联，方便以后操作
 git push origin master  // 把本地修改推送到远程
+// 克隆远程库
+git clone git@github.com:zhouxu1984/zzCode.git
+
 
 
