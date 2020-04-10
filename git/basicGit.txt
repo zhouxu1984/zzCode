@@ -21,7 +21,6 @@ git checkout -- xxx.xx   // 丢弃掉工作区的修改，git add过的内容不
 git reset HEAD xxx.xx    // 撤销掉已经add到暂存区的修改，unstage, 修改回到工作区。
 git log --graph --pretty=oneline --abbrev-commit   // --graph 可以看到merge等点线图，--abbrev-commit  id仅显示前几个字符
 
-
 // 把文件从版本库中删除
 git rm xxx.xx   然后提交
 
@@ -35,6 +34,10 @@ git push origin master  // 把本地修改推送到远程
 // 克隆远程库
 git clone <远程仓库地址>   // 远程仓库地址如git@github.com:michaelliao/learngit.git, clone后只有master分支
 git checkout -b dev origin/dev   // clone在本地获取到远程的其他分支
+// 远程拉取
+git pull 
+git branch --set-upstream-to=origin/<branch> dev  // 如果git pull提示no tracking infomation 需指定本地分支和远程分支的链接
+git pull origin/<branch> dev // 将远程库的branch拉取到本地的dev分支
 
 git remote  // 查看对应的远程库名称
 git remote -v  // 更详细的地址
