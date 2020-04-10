@@ -34,6 +34,7 @@ git push -u origin master   // 把当前分支master推送到远程， -u参数�
 git push origin master  // 把本地修改推送到远程
 // 克隆远程库
 git clone <远程仓库地址>   // 远程仓库地址如git@github.com:michaelliao/learngit.git, clone后只有master分支
+git checkout -b dev origin/dev   // clone在本地获取到远程的其他分支
 
 git remote  // 查看对应的远程库名称
 git remote -v  // 更详细的地址
