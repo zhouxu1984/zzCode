@@ -72,9 +72,10 @@ git tag -a vX.X -m "message" 1098ab // -a 指定标签名  -m备注描述信息
 git tag -d vX.X // 删除指定标签
 git push origin <tagname> // 创建的标签只存在本地，把标签推送到远程
 git push origin --tags   // 一次性推送本地所有tag到远程
-git push origin :refs/tags/vX.X  // 删除远程标签，先删除本地标签，再执行此操作
+git push origin :refs/tags/vX.X  // 删除远程标签，先删除本地标签，再执行此操作， 测试发现：原来pull带tag的人，再pull不会同步删除本地库的标签
 
-
+// github
+fork + clone + push origin + pull request  // 完成开源社区协作
 
 
 
