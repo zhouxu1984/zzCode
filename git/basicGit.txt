@@ -42,6 +42,8 @@ git pull origin/<branch> dev // 将远程库的branch拉取到本地的dev分支
 git remote  // 查看对应的远程库名称
 git remote -v  // 更详细的地址
 
+git rebase // 变基，把本地未push的分叉提交历史整理成直线，不要在公共分支上rebase,会改变提交历史记录，一般只对尚未推送给别人的本地修改执行。
+
 // 分支管理
 git checkout -b dev    // 创建并切换到dev分支  -b表示创建并切换
 git branch dev   &   git checkout dev    // 同上
@@ -60,6 +62,21 @@ git stash apply + git stash drop   // 恢复stash 并删除，同上
 git stash apply stash@{0}    //  多次stash后，恢复到指定stash
 
 git cherry-pick <commit_id>   // 复制指定提交到当前分支，比如同步某bug的解决
+
+// 标签管理
+git tag vX.X   // 给当前分支打一个X.X版本的标签。 注意：tag与commit挂钩，某个分支能看到这个commit，默认是HEAD，就能看到这个tag
+git tag   // 查看所有标签
+git tag vX.X f259833 //给之前的某次提交打某个版本的标签
+git show <tagname> // 查看某个标签对应信息
+git tag -a vX.X -m "message" 1098ab // -a 指定标签名  -m备注描述信息
+git tag -d vX.X // 删除指定标签
+git push origin <tagname> // 创建的标签只存在本地，把标签推送到远程
+git push origin --tags   // 一次性推送本地所有tag到远程
+git push origin :refs/tags/vX.X  // 删除远程标签，先删除本地标签，再执行此操作
+
+
+
+
 
 
 
