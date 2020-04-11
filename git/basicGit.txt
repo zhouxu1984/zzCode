@@ -41,6 +41,7 @@ git pull origin/<branch> dev // 将远程库的branch拉取到本地的dev分支
 
 git remote  // 查看对应的远程库名称
 git remote -v  // 更详细的地址
+git remote rm origin // 移除关联的远程库
 
 git rebase // 变基，把本地未push的分叉提交历史整理成直线，不要在公共分支上rebase,会改变提交历史记录，一般只对尚未推送给别人的本地修改执行。
 
@@ -76,6 +77,11 @@ git push origin :refs/tags/vX.X  // 删除远程标签，先删除本地标签�
 
 // github
 fork + clone + push origin + pull request  // 完成开源社区协作
+
+// 自定义git
+git config --global color.ui  true   // 命令结果彩色显示
+// 编写.gitignore文件
+https://github.com/github/gitignore
 
 
 
