@@ -7,7 +7,7 @@ git init
 
 // 把文件添加到版本库
 git add xxx.xx   or  git add <folderName>/      // 添加目录带不带/都行，目录里的文件都会添加
-git add .  // 添加所有当前的改变
+git add .  // 添加所有当前的改动
 git commit -m "message"
 
 // 查看工作区状态、日志和版本回退

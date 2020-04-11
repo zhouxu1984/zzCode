@@ -26,5 +26,7 @@ p {
 img {
     display: block;   /*img本身是内联元素，为了使其具有外边距等，必须先给予其块级行为*/
     margin: 0 auto;
+    width: 45px;
+    height: 45px;
 }
 
