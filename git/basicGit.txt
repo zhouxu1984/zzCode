@@ -94,13 +94,13 @@ git config --global alias.st status
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"  // 推荐，极大鼓励用别名简化这种常用的长命令
 
 // 搭建git服务器  推荐Ubuntu和Debian
-sudo apt-get install.git  //安装git
-sudo adduser <username> // 创建一个用户，用来运行git服务  username通常用git
-将所有人的公钥id_rsa.pub导入到/home/git/.ssh/authorized_keys文件里，一行一个   //添加用户公钥list，人多用Gitosis
-sudo git init --bare sample.git //初始化git仓库，--bare创建裸仓库，服务器git仓库纯粹为了共享，不直接改工作区
-sudo chown -R git:git sample.git  //把owner改为git
-编辑/etc/passwd: git:x:1001:1001:,,,:/home/git:/bin.bash 改为 git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell   //禁用shell登录
-git clone git@server:/srv/sample.git  //克隆远程仓库
+1.sudo apt-get install.git  //安装git
+2.sudo adduser <username> // 创建一个用户，用来运行git服务  username通常用git
+3.将所有人的公钥id_rsa.pub导入到/home/git/.ssh/authorized_keys文件里，一行一个   //添加用户公钥list，人多用Gitosis
+4.sudo git init --bare sample.git //初始化git仓库，--bare创建裸仓库，服务器git仓库纯粹为了共享，不直接改工作区
+5.sudo chown -R git:git sample.git  //把owner改为git
+6.编辑/etc/passwd: git:x:1001:1001:,,,:/home/git:/bin.bash 改为 git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell   //禁用shell登录
+7.git clone git@server:/srv/sample.git  //克隆远程仓库
 
 // 管理提交权限等，可以用Gitolite工具
 
