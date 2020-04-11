@@ -14,6 +14,7 @@ git status
 git diff xxx.xx          // 对比工作区和暂存区之间的差别
 git diff HEAD -- xxx.xx  // 查看工作区和版本库里面最新版本的区别
 git log
+git log -1 // 查看最近一条日志
 git reset --hard HEAD^    // 回退到上一个版本， HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上个版本，HEAD~100表示上100个版本。
 git reset --hard <commit_id>    // commit_id为log里显示的版本号前几位，一般5位就够了
 git reflog   // 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
@@ -81,7 +82,30 @@ fork + clone + push origin + pull request  // 完成开源社区协作
 // 自定义git
 git config --global color.ui  true   // 命令结果彩色显示
 // 编写.gitignore文件
-https://github.com/github/gitignore
+参考 https://github.com/github/gitignore 
+*.abc //忽略后缀abc的文件 
+abc/* //忽略整个abc目录
+
+git add -f *.* //如果某个文件被gitignore忽略，有确实特例想添加，用-f
+git check-ignore -v X.X // check X.X是被哪条规则忽略了
+
+// 配置别名
+git config --global alias.st status   
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"  // 推荐，极大鼓励用别名简化这种常用的长命令
+
+// 搭建git服务器  推荐Ubuntu和Debian
+sudo apt-get install.git  //安装git
+sudo adduser <username> // 创建一个用户，用来运行git服务  username通常用git
+将所有人的公钥id_rsa.pub导入到/home/git/.ssh/authorized_keys文件里，一行一个   //添加用户公钥list，人多用Gitosis
+sudo git init --bare sample.git //初始化git仓库，--bare创建裸仓库，服务器git仓库纯粹为了共享，不直接改工作区
+sudo chown -R git:git sample.git  //把owner改为git
+编辑/etc/passwd: git:x:1001:1001:,,,:/home/git:/bin.bash 改为 git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell   //禁用shell登录
+git clone git@server:/srv/sample.git  //克隆远程仓库
+
+// 管理提交权限等，可以用Gitolite工具
+
+
+
 
 
 
