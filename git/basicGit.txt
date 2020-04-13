@@ -27,7 +27,7 @@ git log --graph --pretty=oneline --abbrev-commit   // --graph 可以看到merge�
 git rm xxx.xx   然后提交
 
 // 重命名文件和文件夹
-git mv <oldName> <newName>
+git mv <oldName> <newName> // 重命名后直接放到了stage区，待提交状态
 
 // 远程仓库相关
 // 创建SSH Key, 本地git仓库和远程github等仓库之间的传输是通过SSH加密的

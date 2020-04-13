@@ -1,33 +1,121 @@
-<!DOCTYPE html> <!-- 历史原因必须保留，但没有实际作用-->
-<html>
-
-<head>
-    <!--HTML头部，不会显示在浏览器中，包含页面的元数据-->
-    <meta charset="utf-8">
-    <link href="CSS/basicCSS.css" rel="stylesheet">
+<!-- 历史原因必须保留，但没有实际作用-->
+<!DOCTYPE html>
+<!--设置好lang可以被搜素引擎和相关设备更好的使用，子元素可以单独的设置和全局不同的lang，比如en-US，jp等-->
+<html lang="zh-CN">
+  <!--HTML头部，不会显示在浏览器中，包含页面的元数据-->
+  <head>
+    <!--页面元信息-->
+    <!--设置页面字符集，utf-8支持大部分语言的字符-->
+    <meta charset="utf-8" />
+    <meta name="author" content="zz" />
+    <meta name="desciption" contetn="learn HTML" />
+    <!--keywords已被很多搜索引擎忽略，因为大量作弊误导引擎-->
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <!--Facebook的Open Graph Data元数据协议等社交网站规范，twitter这些都有，为了更好的被社交网站收录和识别-->
+    <meta property="og:title" content="zzCode basicHTML" />
+    <meta property="og:image" content="https://myWebSite/images/logo.png" />
+    <meta name="twitter:title" content="zzCode basicHTML" />
+    <!--链接外部CSS-->
+    <link rel="stylesheet" href="CSS/basicCSS.css" />
+    <!--标识整个HTML文档标题的元数据，不是文档内容，显示在页面tab中，建议书签名，页面搜索结果等-->
     <title>basicHTML</title>
-    <!--标识整个HTML文档标题的元数据，不是文档内容-->
-</head>
+  </head>
 
-<body>
-    <h1>主标题</h1>
+  <body>
+    <!--h1每个页面最好只使用一次，一般情况下标题种类h1-6一个页面使用不超过3个为佳-->
+    <h1 id="heading1">主标题</h1>
     <h2>顶层标题</h2>
     <h3>子标题</h3>
     <h4>次子标题</h4>
-    <p>这是一个段落</p>
+    <!--使用strong表示非常重要，使用em表示强调，主要是语义，不是为了获得粗体和斜体的样式-->
+    <p>这是一个<strong>很重要的</strong><em>段落</em></p>
+    <!--u、b、i为表象元素，表示下划线、粗体、斜体样式，是css过渡时期的产物，现在建议直接用css-->
+    <p><u>这是一个</u><b>很重要的</b><i>段落</i></p>
+
+    <!--ul表示无序列表-->
     <ul>
-        <li>无序列表1</li>
-        <li>无序列表2</li>
+      <li>无序列表1</li>
+      <li>无序列表2</li>
     </ul>
+    <!--ol表示序列表-->
     <ol>
-        <li>有序列表1</li>
-        <li>有序列表2</li>
+      <li>有序列表1</li>
+      <li>有序列表2</li>
     </ol>
-    <img src="images/logo.png" alt="测试图片">
-    <a href="https://github.com/zhouxu1984/zzCode" target="_blank">这是一个链接</a>
+    <!--dl表示描述列表-->
+    <dl>
+      <dt>描述列表term1</dt>
+      <dd>描述列表description1</dd>
+      <dt>描述列表term2</dt>
+      <dd>描述列表description2.1</dd>
+      <dd>描述列表description2.2</dd>
+    </dl>
+
+    <!--链接a元素：1."访问仓库"比"点击这里"是更好的链接描述，尽可能短，搜索引擎和用户都更好懂 2.title属性，对键盘操作浏览网页的人无用-->
+    <a href="https://github.com/zhouxu1984/zzCode" title="代码仓库地址" target="_blank">访问仓库</a>
+    <a href="https://github.com/zhouxu1984/zzCode" target="_blank">
+      <img src="images/logo.png" alt="这是一个图片链接" />
+    </a>
+    <!--尽可能使用相对链接;链接到非HTML资源时尽量留下清晰的提示-->
+    <a href="images/logo.png">访问logo图片(PNG,8KB)</a>
+    <a href="#heading1">这是一个指向文档片段h1的链接</a>
+    <!--在下载链接时使用download属性来提供默认的保存文件名，只适用于同源URL（协议、主机、端口相同）-->
+    <a href="../git/basicGit.txt" download="git.txt">下载git命令(txt,7KB)</a>
+    <!--电子邮件链接-->
+    <a href="mailto:gistarbird@163.com">发邮件给作者</a>
+
+    <!--引用，分为块引用和行内引用 cite属性默认不会显示，引用来源显示用cite元素-->
+    <p>
+      根据
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank"> <cite>MDN blockquote 网页</cite></a
+      >:
+    </p>
+    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+      <p>
+        The <strong>HTML Element — <code>&lt;blockquote&gt;</code> </strong>表示包括的内容是外部引用
+      </p>
+    </blockquote>
+    <p>
+      The <strong>quote element — <code>&lt;q&gt;</code></strong>
+      <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">用来表示短引用</q>
+    </p>
+
+    <!--缩略语abbr，acronym基本废弃，用abbr就可以-->
+    <p>用"缩略语"<abbr title="超文本标记语言（Hypertext Markup Language）">HTML</abbr>来组织网页文档</p>
+
+    <!--address用于标记编写该HTML文档的人联系方式-->
+    <address><p>作者地址：zz,中国北京</p></address>
+
+    <!--sub元素表示下标，sup元素表示上标-->
+    <p>3<sup>2</sup>=9; H<sub>2</sub>O表示水;</p>
+
+    <!--计算机代码相关元素：code：代码；pre：保留空白字符，用于代码块；var：用于变量名；kbd：键盘输入；samp:标记计算机程序的输出-->
+    <pre><code>let headingName = document.querySelector('h1');</code></pre>
+    <p>上述代码<var>headingName</var>是一个变量,按<kbd>Ctrl</kbd>+<kbd>S</kbd>保存当前页面</p>
+    <p>程序输出是:<samp>the result is：5.</samp></p>
+
+    <!--time元素标记时间和日期-->
+    <!-- 标准简单日期 -->
+    <time datetime="2016-01-20">20 January 2016</time>
+    <!-- 只包含年份和月份-->
+    <time datetime="2016-01">January 2016</time>
+    <!-- 只包含月份和日期 -->
+    <time datetime="01-20">20 January</time>
+    <!-- 只包含时间，小时和分钟数 -->
+    <time datetime="19:30">19:30</time>
+    <!-- 还可包含秒和毫秒 -->
+    <time datetime="19:30:01.856">19:30:01.856</time>
+    <!-- 日期和时间 -->
+    <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+    <!-- 含有时区偏移值的日期时间 -->
+    <time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+    <!-- 调用特定的周 -->
+    <time datetime="2016-W04">The fourth week of 2016</time>
+
+    <!--button表示按钮-->
     <button>切换用户</button>
+
+    <!--外部script的引用，放在/body之前更好-->
     <script src="JavaScript/basicJS.js" defer></script>
-
-</body>
-
+  </body>
 </html>

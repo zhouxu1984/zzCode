@@ -1,32 +1,27 @@
 html {
-    background-color: #00539F;
+  background-color: #00539f;
 }
 
 body {
-    width: 600px;
-    margin: 20px auto;  /* 上下20px， 左右居中*/
-    background-color: #FF9500;
-    padding: 0 20px 20px 20px;  /* 上、右、下、左 */
-    border: 5px solid black;
-
+  width: 600px;
+  margin: 20px auto; /* 上下20px， 左右居中*/
+  background-color: #ff9500;
+  padding: 0 20px 20px 20px; /* 上、右、下、左 */
+  border: 5px solid black;
 }
 
 h1 {
-    margin: 0px;
-    padding: 20px 0;
-    color: #00539F;
+  margin: 0px;
+  padding: 20px 0;
+  color: #00539f;
 }
 
 p {
-    color: red;
-    width: 600px;
-    border: 1px solid black;    
+  color: #00539f;
+  width: 500px;
+  border: 1px solid black;
 }
 
-img {
-    display: block;   /*img本身是内联元素，为了使其具有外边距等，必须先给予其块级行为*/
-    margin: 0 auto;
-    width: 45px;
-    height: 45px;
+a {
+  display: block;
 }
-
