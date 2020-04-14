@@ -1,3 +1,5 @@
+<!-- 编写HTML要敬畏语义，选择合适的元素，视觉效果不是一切，本页面没有太多逻辑，旨在展示各HTML元素用法-->
+<!--实际编写HTML前应该先做好网站的信息架构的设计：1.通用内容（页眉、页脚）；2.页面结构草图（布局）；3.对网站期望内容list；4.对list内容分组；5.绘制站点地图草图（气泡+工作流联线）-->
 <!-- 历史原因必须保留，但没有实际作用-->
 <!DOCTYPE html>
 <!--设置好lang可以被搜素引擎和相关设备更好的使用，子元素可以单独的设置和全局不同的lang，比如en-US，jp等-->
@@ -8,7 +10,7 @@
     <!--设置页面字符集，utf-8支持大部分语言的字符-->
     <meta charset="utf-8" />
     <meta name="author" content="zz" />
-    <meta name="desciption" contetn="learn HTML" />
+    <meta name="description" content="learn HTML" />
     <!--keywords已被很多搜索引擎忽略，因为大量作弊误导引擎-->
     <meta name="keywords" content="HTML,CSS,JavaScript" />
     <!--Facebook的Open Graph Data元数据协议等社交网站规范，twitter这些都有，为了更好的被社交网站收录和识别-->
@@ -114,6 +116,58 @@
 
     <!--button表示按钮-->
     <button>切换用户</button>
+
+    <!--网站布局的语义化标签：header:页眉; nav：导航栏；main:主内容，各种子内容可用artical、section、div；aside侧边栏，经常嵌套在main中，footer：页脚-->
+    <!--可以有全局的header，也可以某个article或section的header-->
+    <header><h1>本站所有网页的统一主标题</h1></header>
+    <!--nav为主导航栏，不应包含二级链接等内容-->
+    <nav>
+      <ul>
+        <li><a href="#">栏目1</a></li>
+        <li><a href="#">栏目2</a></li>
+      </ul>
+    </nav>
+    <!--每个页面一般只用一次main，且直接位于body中，不要嵌套进其他元素-->
+    <main>
+      <!--也可以一个section包括多个article，看上下文-->
+      <article>
+        <h2>文章标题</h2>
+        <section>
+          <h3>小节标题</h3>
+          文章小节1
+        </section>
+        <section>
+          <h3>小节标题</h3>
+          文章小节2
+        </section>
+      </article>
+      <!--asider通常包含一些间接信息，如术语条目、作者简介、相关链接等-->
+      <aside>
+        <h2>侧边栏相关链接</h2>
+        <ul>
+          <li><a>超链接1</a></li>
+          <li><a>超链接2</a></li>
+        </ul>
+      </aside>
+    </main>
+    <!--footer包含页面的页脚-->
+    <footer>
+      <p>© 2050 某某保留所有权利</p>
+    </footer>
+
+    <!--常用的无语义元素div和span，应配合使用class属性提供一些标签，使其易于查询-->
+    <!--span是内联inline的无语义元素，最好只用于无法找到更好的语义元素时使用，或不想增加特定的含义。-->
+    <p>一个普通的段落。<span class="editor-note">编辑批注内容</span></p>
+    <!--div是块级无语义元素，应只在没有更好的语义方案时才用它，很容易被滥用-->
+    <div class="shopping-cart">
+      <h2>购物车</h2>
+      <p>购物车相关内容</p>
+    </div>
+
+    <!--br：换行和hr：生成一条水平分割线-->
+    <hr />
+    <p>锄禾日当午<br />汗滴禾下土</p>
+    <hr />
 
     <!--外部script的引用，放在/body之前更好-->
     <script src="JavaScript/basicJS.js" defer></script>
