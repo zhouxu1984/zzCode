@@ -1,5 +1,5 @@
 <!-- 编写HTML要敬畏语义，选择合适的元素，视觉效果不是一切，本页面没有太多逻辑，旨在展示各HTML元素用法-->
-<!--实际编写HTML前应该先做好网站的信息架构的设计：1.通用内容（页眉、页脚）；2.页面结构草图（布局）；3.对网站期望内容list；4.对list内容分组；5.绘制站点地图草图（气泡+工作流联线）-->
+<!-- 实际编写HTML前应该先做好网站的信息架构的设计：1.通用内容（页眉、页脚）；2.页面结构草图（布局）；3.对网站期望内容list；4.对list内容分组；5.绘制站点地图草图（气泡+工作流联线）-->
 <!-- 历史原因必须保留，但没有实际作用-->
 <!DOCTYPE html>
 <!--设置好lang可以被搜素引擎和相关设备更好的使用，子元素可以单独的设置和全局不同的lang，比如en-US，jp等-->
@@ -168,6 +168,72 @@
     <hr />
     <p>锄禾日当午<br />汗滴禾下土</p>
     <hr />
+
+    <!--多媒体内容-->
+    <!--figure可以是几张图片、一段代码、音视频、方程、表格或其他，独立内容单元-->
+    <figure>
+      <!--尽量用相对路径，不要用指向别的网站的图片地址（hotlinking盗链）-->
+      <!--像img、video这样的元素有时称为替换元素，内容和尺寸由外部资源定义，而不是元素本身-->
+      <!--图片名称也要考虑语义性，搜索引擎好理解，另外，不要把文本放在图片里; 如果图片只是为了装饰，用CSS而不是HTML-->
+      <img src="images/dinosaur_small.jpg" alt="恐龙图片" title="MDN下载的恐龙图片" />
+      <figcaption>MDN下载的一只霸王龙化石图片</figcaption>
+    </figure>
+    <!--HTML5包括video和audio标签，controls是播放器，没有都播放不了，video标签内的段落是后备内容-->
+    <video src="media/videos/rabbit320.webm" controls>
+      <p>你的浏览器不支持HTML5视频，可<a href="media/videos/rabbit320.mp4">点此观看视频</a></p>
+    </video>
+    <!--使用多种格式兼容不同浏览器-->
+    <!--autoplay:音视频立即自动播放；loop:循环播放；muted:播放时默认关闭声音；poster：视频播放前指向的一个图像URL,开启autoplay就看不到了;
+    preload：（none不缓冲，auto页面加载后缓存媒体文件，metadata仅缓冲文件的元数据）-->
+    <video controls loop muted poster="images/dinosaur_small.jpg" preload="metadata">
+      <source src="media/videos/rabbit320.webm" type="video/webm" />
+      <source src="media/videos/rabbit320.mp4" type="video/mp4" />
+      <p>你的浏览器不支持HTML5视频，可<a href="media/videos/rabbit320.mp4">点此观看视频</a></p>
+    </video>
+    <!--audio基本同video，但由于没有视觉部件，不可以设置width/height属性，不支持poster属性-->
+    <audio controls>
+      <source src="media/audios/viper.mp3" type="audio/mp3" />
+      <source src="media/audios/viper.ogg" type="audio/ogg" />
+      <p>你的浏览器不支持 HTML5 音频，可<a href="media/audios/viper.mp3">点此收听音频</a></p>
+    </audio>
+    <!--显示音轨文本WebVTT+track,没跑成功-->
+    <video controls>
+      <source src="media/videos/video.mp4" type="video/mp4" />
+      <source src="media/videos/video.webm" type="video/webm" />
+      <track kind="subtitles" src="media/videos/video_subtitles_en.vtt" srclang="en" />
+    </video>
+    <!--嵌入技术iframe,使用时注意安全和版权考量，如使用HTTPS（1.减少远程内容传输过程中被篡改的机会；2.防止嵌入式内容访问父文档内容，反之也是），
+    一般绝不使用http嵌入第三方内容（iframe的src地址应该是https的）；sandbox在现代高版本浏览器才有用，提高安全设置，应始终使用，如果绝对需要，可使用
+    sandbox=""逐个添加权限，但allow-scripts和allow-same-origin不能同时添加,否则嵌入式内容可通过脚本绕过安全策略完全关闭sandbox-->
+    <!--为了提高速度，在主内容加载完后，使用JS设置iframe的src是个好主意，可减少官方页面加载时间（SEO重要指标）-->
+    <!--尺寸和frameborder设置可优先用CSS，allowfullscreen设置则iframe可通过全屏API设置成全屏模式-->
+    <!--配置CSP（内容安全策略）X-Frame-Options（DENY或SAMEORIGIN）,可防止其他网站嵌入您的网页内容（可能导致点击和一系列其他攻击）,一般在
+    Apache、nginx、IIS、HAProxy、Express等中配置-->
+    <iframe
+      src="file:///H:/zzCode/HTML/basicHTML.html"
+      width="100%"
+      height="500"
+      frameborder="0"
+      allowfullscreen
+      sandbox="allow-scripts allow-same-origin"
+    >
+      <!--备选内容-->
+      <p>
+        <a href="https://map.baidu.com/@12987789,4850185,13z">
+          点击这里访问
+        </a>
+      </p>
+    </iframe>
+    <!--embed和object元素，传统的插件嵌入方法，嵌入像Java小程序、Flash、PDF、视频、SVG、图像等，已基本过时-->
+    <object data="media/pdf/mypdf.pdf" type="application/pdf" width="100%" height="500" typemustmatch>
+      <p>You don't have a PDF plugin, but you can <a href="media/pdf/mypdf.pdf">download the PDF file.</a></p>
+    </object>
+
+    <!--svg（用于描述矢量图像的xml语言）
+      1.优点：相对栅格图像有更小的体积，放大更清晰；其中的文本仍然可访问（利于SEO）；可以很好的适应css和js
+      2.缺点：非常容易变得复杂，复杂的svg会占用浏览器长的处理时间；旧版本的IE（9之前）不支持；比栅格图像更难创建。
+    -->
+    <img src="images/server.svg" alt="server的svg" width="100px" ,height="100px" />
 
     <!--外部script的引用，放在/body之前更好-->
     <script src="JavaScript/basicJS.js" defer></script>
