@@ -252,6 +252,70 @@
       <img src="images/elva-fairy-800w.jpg" alt="Chris standing up holding his daughter Elva" />
     </picture>
 
+    <hr />
+    <!--表格：th表示表头，默认粗体和居中-->
+    <table class="basicTable">
+      <!--用caption，不用summary（被HTML5废除）-->
+      <caption>
+        表格标题
+      </caption>
+      <colgroup>
+        <col />
+        <col style="background-color: blueviolet;" />
+        <col style="background-color: cornflowerblue;" span="2" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>列表头1</th>
+          <th>列表头2</th>
+          <th>列表头3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="2" scope="row">行表头1</th>
+          <td>1行2列</td>
+          <td>1行3列</td>
+          <td>1行4列</td>
+        </tr>
+        <tr>
+          <td>2行2列</td>
+          <td>2行3列</td>
+          <td>2行4列</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <!--scope有用于行或列的标题th，四个值： row | col | colgroup | rowgroup-->
+          <!--精确控制td和th关系可以用id+headers属性，th里指定id，对应的td里用headers指定对应th的id，多个用空格隔开-->
+          <th scope="row">行表头2</th>
+          <td colspan="3">3行</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <hr />
+    <!--表单form：表单越大，失去用户的风险越大，保持简单，保持专注，只要求必要的数据-->
+    <form action="" method="POST">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" value="default name" />
+      </div>
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="user_email" />
+      </div>
+      <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg" name="user_message"></textarea>
+      </div>
+      <div class="button">
+        <!--button的type选项三种：submit（提交到form的action）、reset（表单控件恢复到默认值）、button（JS处理）-->
+        <button type="submit">Send your Message</button>
+      </div>
+    </form>
+
     <!--外部script的引用，放在/body之前更好-->
     <script src="JavaScript/basicJS.js" defer></script>
   </body>

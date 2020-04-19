@@ -25,3 +25,52 @@ p {
 a {
   display: block;
 }
+
+.basicTable {
+  border: 1px solid red;
+}
+
+.basicTable th,
+td {
+  border: 1px solid yellow;
+}
+
+form {
+  /*居中表单*/
+  margin: 0 auto;
+  width: 400px;
+  /*显示表单的轮廓*/
+  padding: 1em;
+  border: 1px solid #cccccc;
+  border-radius: 1em;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+form label {
+  /*确保所有label大小相同并正确对齐*/
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+form input,
+textarea {
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+form textarea {
+  vertical-align: top;
+}
+
+form .button {
+  padding-left: 90px;
+}
+
+form button {
+  margin-left: 0.5em;
+}
