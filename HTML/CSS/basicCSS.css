@@ -74,3 +74,17 @@ form .button {
 form button {
   margin-left: 0.5em;
 }
+
+form fieldset {
+  vertical-align: middle;
+}
+
+form fieldset input {
+  text-align: right;
+  width: 20px;
+}
+
+form fieldset label {
+  width: 10px;
+  text-align: left;
+}

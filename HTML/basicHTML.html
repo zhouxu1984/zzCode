@@ -296,7 +296,7 @@
     </table>
 
     <hr />
-    <!--表单form：表单越大，失去用户的风险越大，保持简单，保持专注，只要求必要的数据-->
+    <!--表单form：表单越大，失去用户的风险越大，保持简单，保持专注，只要求必要的数据；禁止表单嵌套-->
     <form action="" method="POST">
       <div>
         <label for="name">Name:</label>
@@ -310,6 +310,18 @@
         <label for="msg">Message:</label>
         <textarea id="msg" name="user_message"></textarea>
       </div>
+      <!--fieldset用于给表单控件进行分段，比如一组单选按钮-->
+      <fieldset>
+        <legend>Gender:</legend>
+        <div>
+          <input type="radio" name="gender" id="gender_1" value="male" />
+          <label for="gender_1">Male</label>
+        </div>
+        <div>
+          <input type="radio" name="gender" id="gender_2" value="female" />
+          <label for="gender_2">FeMale</label>
+        </div>
+      </fieldset>
       <div class="button">
         <!--button的type选项三种：submit（提交到form的action）、reset（表单控件恢复到默认值）、button（JS处理）-->
         <button type="submit">Send your Message</button>
