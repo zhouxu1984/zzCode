@@ -299,7 +299,7 @@
     <!--表单form：表单越大，失去用户的风险越大，保持简单，保持专注，只要求必要的数据；禁止表单嵌套-->
     <form action="" method="POST">
       <div>
-        <label for="name">Name:</label>
+        <label for="name">Name: <abbr title="required">*</abbr></label>
         <input type="text" id="name" name="user_name" value="default name" />
       </div>
       <div>
@@ -327,7 +327,60 @@
         <button type="submit">Send your Message</button>
       </div>
     </form>
-
+    <hr />
+    <!--各种表单小部件-->
+    <!--通用属性：autofocus（默认false）；disabled（默认false）-->
+    <!--单行文本框-->
+    <input type="text" id="textSample" name="textSample" value="i am text input" />
+    <!--E-mail地址框, multiple允许输入多个邮件地址，以逗号分隔-->
+    <input type="email" id="emailSample" name="emailSample" multiple />
+    <!--密码框-->
+    <input type="password" id="passwordSample" name="passwordSample" />
+    <!--搜索框-->
+    <input type="search" id="searchSample" name="searchSample" />
+    <!--电话号码栏,主要是语义，没有输入限制-->
+    <input type="tel" id="telSample" name="telSample" />
+    <!--URI栏-->
+    <input type="url" id="urlSample" name="urlSample" />
+    <!--多行文本框,与text的input的区别：允许输入包含换行符的文本，只接受文本内容，中间文本内容为默认值-->
+    <textarea cols="10" rows="5"></textarea>
+    <!--下拉内容-->
+    <select id="selectSample" name="selectSample">
+      <option>1</option>
+      <option selected>2</option>
+      <option>3</option>
+    </select>
+    <!--默认提交value值，没有才是内容文本-->
+    <select id="selectSample2" name="selectSample2">
+      <optgroup label="number">
+        <option>1</option>
+        <option>2</option>
+      </optgroup>
+      <optgroup label="people">
+        <option>jack</option>
+        <option value="170">marry</option>
+      </optgroup>
+    </select>
+    <!--多选选择框-->
+    <select multiple id="multiSelect" name="multiSelect">
+      <option>a</option>
+      <option>b</option>
+      <option>c</option>
+    </select>
+    <!--自动补全输入框,datalist在IE10以下版本不支持-->
+    <label for="fruitSample">What's your favorite fruit?</label>
+    <input type="text" id="fruitSample" name="fruitSample" list="suggestSample" />
+    <datalist id="suggestSample">
+      <option>Apple</option>
+      <option>Banana</option>
+      <option>BlackBerry</option>
+      <option>Lemon</option>
+    </datalist>
+    <!--可选中项-->
+    <!--复选框-->
+    <input type="checkbox" checked id="checkboxSample" name="checkboxSample" value="checkboxValue" />
+    <!--单选按钮: 相同name属性的radio，为一组单选按钮-->
+    <input type="radio" checked id="radioSample" name="radioSample" />
     <!--外部script的引用，放在/body之前更好-->
     <script src="JavaScript/basicJS.js" defer></script>
   </body>
