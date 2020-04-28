@@ -381,6 +381,53 @@
     <input type="checkbox" checked id="checkboxSample" name="checkboxSample" value="checkboxValue" />
     <!--单选按钮: 相同name属性的radio，为一组单选按钮-->
     <input type="radio" checked id="radioSample" name="radioSample" />
+    <!--按钮 两种区别：button内容可以不仅是文字，可以是HTML-->
+    <!--submit-->
+    <button type="submit">submit button</button>
+    <input type="submit" value="input submit button" />
+    <!--reset-->
+    <button type="reset">reset button</button>
+    <input type="reset" value="input reset button" />
+    <!--button-->
+    <button type="button">anonymous button</button>
+    <input type="button" value="input anonymous button" />
+    <!--数字,iE10以下不支持-->
+    <input type="number" name="numberSample" id="numberSample" min="1" max="10" step="2" />
+    <!--滑块,iE10以下不支持-->
+    <input type="range" name="rangeSample" id="rangeSample" min="0" max="500" step="10" />
+    <!--日期时间选择器，Chrome、Edge、Opera支持，iE不支持，Firefox和Safari不太支持-->
+    <!--本地时间-->
+    <input type="datetime-local" name="datetimeSample" id="datetimeSample" />
+    <!--月-->
+    <input type="month" name="monthSample" id="monthSample" />
+    <!--时间-->
+    <input type="time" name="timeSample" id="timeSample" />
+    <!--星期-->
+    <input type="week" name="weekSample" id="weekSample" />
+    <!--所有日期和时间控制都可以使用min和max属性来约束-->
+    <input type="date" name="myDate" min="2019-06-01" max="2019-08-31" id="dateSample" />
+    <!--拾色器-->
+    <input type="color" name="colorSample" id="colorSample" />
+    <!--文件选择器-->
+    <input type="file" name="fileSample" id="fileSample" accept="image/*" multiple />
+    <!--隐藏内容-->
+    <input type="hidden" name="hiddenSample" id="hiddenSample" value="12345" />
+    <!--图像按钮-->
+    <input type="image" alt="Click me" src="images/logo.png" />
+    <!--进度条，除了iE都能很好的支持-->
+    <progress max="100" value="75">75/100</progress>
+    <!--仪表，除了iE都能很好的支持-->
+    <meter min="0" max="100" value="75" low="33" high="66" optimum="10">75</meter>
+    <!--发送文件-->
+    <form method="post" enctype="multipart/form-data">
+      <div>
+        <label for="filePostSample">选择文件</label>
+        <input type="file" name="filePostSample" id="filePostSample" />
+      </div>
+      <div>
+        <button>发送文件</button>
+      </div>
+    </form>
     <!--外部script的引用，放在/body之前更好-->
     <script src="JavaScript/basicJS.js" defer></script>
   </body>
