@@ -428,6 +428,14 @@
         <button>发送文件</button>
       </div>
     </form>
+    <!--使用内置表单进行数据校验-->
+    <!--required属性、pattern正则表达式、-->
+    <form>
+      <label for="requiredSample">必填字段</label>
+      <input type="text" name="requiredSample" id="requiredSample" required pattern="a*" minlength="3" maxlength="10" />
+      <button>提交</button>
+    </form>
+
     <!--外部script的引用，放在/body之前更好-->
     <script src="JavaScript/basicJS.js" defer></script>
   </body>
