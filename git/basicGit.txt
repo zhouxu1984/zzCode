@@ -34,6 +34,9 @@ git mv <oldName> <newName> // 重命名后直接放到了stage区，待提交状
 ssh-keygen -t rsa -C "youremail@example.com"    然后一路回车，使用默认值即可，用户主目录里会产生.ssh目录，里面有id_rsa和id_rsa_pub，SSH Key的密钥对，pub是公钥，需添加到远程服务器上
 // 本地仓库关联远程库，并推送到远程库
 git remote add origin <远程仓库地址>   // 远程库的名字是origin，默认，可以改
+git remote add github git@github.com:zhouxu1984/zzCode.git
+git remote add gitee git@gitee.com:zhouxu1984/zzCode.git
+
 git push -u origin master   // 把当前分支master推送到远程， -u参数把本地master分支和远程的master分支进行关联，方便以后操作
 git push origin master  // 把本地修改推送到远程
 // 克隆远程库
