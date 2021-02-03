@@ -4,439 +4,442 @@
 <!DOCTYPE html>
 <!--设置好lang可以被搜素引擎和相关设备更好的使用，子元素可以单独的设置和全局不同的lang，比如en-US，jp等-->
 <html lang="zh-CN">
-  <!--HTML头部，不会显示在浏览器中，包含页面的元数据-->
-  <head>
-    <!--页面元信息-->
-    <!--设置页面字符集，utf-8支持大部分语言的字符-->
-    <meta charset="utf-8" />
-    <meta name="author" content="zz" />
-    <meta name="description" content="learn HTML" />
-    <!--keywords已被很多搜索引擎忽略，因为大量作弊误导引擎-->
-    <meta name="keywords" content="HTML,CSS,JavaScript" />
-    <!--Facebook的Open Graph Data元数据协议等社交网站规范，twitter这些都有，为了更好的被社交网站收录和识别-->
-    <meta property="og:title" content="zzCode basicHTML" />
-    <meta property="og:image" content="https://myWebSite/images/logo.png" />
-    <meta name="twitter:title" content="zzCode basicHTML" />
-    <!--强制手机浏览器等采用它们的真实可视窗口的宽度来加载网页-->
-    <!--<meta name="viewport" content="width=device-width />-->
-    <!--链接外部CSS-->
-    <link rel="stylesheet" href="CSS/basicCSS.css" />
-    <!--标识整个HTML文档标题的元数据，不是文档内容，显示在页面tab中，建议书签名，页面搜索结果等-->
-    <title>basicHTML</title>
-  </head>
+<!--HTML头部，不会显示在浏览器中，包含页面的元数据-->
 
-  <body>
-    <!--h1每个页面最好只使用一次，一般情况下标题种类h1-6一个页面使用不超过3个为佳-->
-    <h1 id="heading1">主标题</h1>
-    <h2>顶层标题</h2>
-    <h3>子标题</h3>
-    <h4>次子标题</h4>
-    <!--使用strong表示非常重要，使用em表示强调，主要是语义，不是为了获得粗体和斜体的样式-->
-    <p>这是一个<strong>很重要的</strong><em>段落</em></p>
-    <!--u、b、i为表象元素，表示下划线、粗体、斜体样式，是css过渡时期的产物，现在建议直接用css-->
-    <p><u>这是一个</u><b>很重要的</b><i>段落</i></p>
+<head>
+  <!--页面元信息-->
+  <!--设置页面字符集，utf-8支持大部分语言的字符-->
+  <meta charset="utf-8" />
+  <meta name="author" content="zz" />
+  <meta name="description" content="learn HTML" />
+  <!--keywords已被很多搜索引擎忽略，因为大量作弊误导引擎-->
+  <meta name="keywords" content="HTML,CSS,JavaScript" />
+  <!--Facebook的Open Graph Data元数据协议等社交网站规范，twitter这些都有，为了更好的被社交网站收录和识别-->
+  <meta property="og:title" content="zzCode basicHTML" />
+  <meta property="og:image" content="https://myWebSite/images/logo.png" />
+  <meta name="twitter:title" content="zzCode basicHTML" />
+  <!--强制手机浏览器等采用它们的真实可视窗口的宽度来加载网页-->
+  <!--<meta name="viewport" content="width=device-width />-->
+  <!--链接外部CSS-->
+  <link rel="stylesheet" href="CSS/basicCSS.css" />
+  <!--标识整个HTML文档标题的元数据，不是文档内容，显示在页面tab中，建议书签名，页面搜索结果等-->
+  <title>basicHTML</title>
+</head>
 
-    <!--ul表示无序列表-->
+<body>
+  <!--h1每个页面最好只使用一次，一般情况下标题种类h1-6一个页面使用不超过3个为佳-->
+  <h1 id="heading1">主标题</h1>
+  <h2>顶层标题</h2>
+  <h3>子标题</h3>
+  <h4>次子标题</h4>
+  <!--使用strong表示非常重要，使用em表示强调，主要是语义，不是为了获得粗体和斜体的样式-->
+  <p>这是一个<strong>很重要的</strong><em>段落</em></p>
+  <!--u、b、i为表象元素，表示下划线、粗体、斜体样式，是css过渡时期的产物，现在建议直接用css-->
+  <p><u>这是一个</u><b>很重要的</b><i>段落</i></p>
+
+  <!--ul表示无序列表-->
+  <ul>
+    <li>无序列表1</li>
+    <li>无序列表2</li>
+  </ul>
+  <!--ol表示序列表-->
+  <ol>
+    <li>有序列表1</li>
+    <li>有序列表2</li>
+  </ol>
+  <!--dl表示描述列表-->
+  <dl>
+    <dt>描述列表term1</dt>
+    <dd>描述列表description1</dd>
+    <dt>描述列表term2</dt>
+    <dd>描述列表description2.1</dd>
+    <dd>描述列表description2.2</dd>
+  </dl>
+
+  <!--链接a元素：1."访问仓库"比"点击这里"是更好的链接描述，尽可能短，搜索引擎和用户都更好懂 2.title属性，对键盘操作浏览网页的人无用-->
+  <a href="https://github.com/zhouxu1984/zzCode" title="代码仓库地址" target="_blank">访问仓库</a>
+  <a href="https://github.com/zhouxu1984/zzCode" target="_blank">
+    <img src="images/logo.png" alt="这是一个图片链接" />
+  </a>
+  <!--尽可能使用相对链接;链接到非HTML资源时尽量留下清晰的提示-->
+  <a href="images/logo.png">访问logo图片(PNG,8KB)</a>
+  <a href="#heading1">这是一个指向文档片段h1的链接</a>
+  <!--在下载链接时使用download属性来提供默认的保存文件名，只适用于同源URL（协议、主机、端口相同）-->
+  <a href="../git/basicGit.txt" download="git.txt">下载git命令(txt,7KB)</a>
+  <!--电子邮件链接-->
+  <a href="mailto:gistarbird@163.com">发邮件给作者</a>
+
+  <!--引用，分为块引用和行内引用 cite属性默认不会显示，引用来源显示用cite元素-->
+  <p>
+    根据
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank"> <cite>MDN blockquote
+        网页</cite></a>:
+  </p>
+  <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    <p>
+      The <strong>HTML Element — <code>&lt;blockquote&gt;</code> </strong>表示包括的内容是外部引用
+    </p>
+  </blockquote>
+  <p>
+    The <strong>quote element — <code>&lt;q&gt;</code></strong>
+    <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">用来表示短引用</q>
+  </p>
+
+  <!--缩略语abbr，acronym基本废弃，用abbr就可以-->
+  <p>用"缩略语"<abbr title="超文本标记语言（Hypertext Markup Language）">HTML</abbr>来组织网页文档</p>
+
+  <!--address用于标记编写该HTML文档的人联系方式-->
+  <address>
+    <p>作者地址：zz,中国北京</p>
+  </address>
+
+  <!--sub元素表示下标，sup元素表示上标-->
+  <p>3<sup>2</sup>=9; H<sub>2</sub>O表示水;</p>
+
+  <!--计算机代码相关元素：code：代码；pre：保留空白字符，用于代码块；var：用于变量名；kbd：键盘输入；samp:标记计算机程序的输出-->
+  <pre><code>let headingName = document.querySelector('h1');</code></pre>
+  <p>上述代码<var>headingName</var>是一个变量,按<kbd>Ctrl</kbd>+<kbd>S</kbd>保存当前页面</p>
+  <p>程序输出是:<samp>the result is：5.</samp></p>
+
+  <!--time元素标记时间和日期-->
+  <!-- 标准简单日期 -->
+  <time datetime="2016-01-20">20 January 2016</time>
+  <!-- 只包含年份和月份-->
+  <time datetime="2016-01">January 2016</time>
+  <!-- 只包含月份和日期 -->
+  <time datetime="01-20">20 January</time>
+  <!-- 只包含时间，小时和分钟数 -->
+  <time datetime="19:30">19:30</time>
+  <!-- 还可包含秒和毫秒 -->
+  <time datetime="19:30:01.856">19:30:01.856</time>
+  <!-- 日期和时间 -->
+  <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+  <!-- 含有时区偏移值的日期时间 -->
+  <time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+  <!-- 调用特定的周 -->
+  <time datetime="2016-W04">The fourth week of 2016</time>
+
+  <!--button表示按钮-->
+  <button>切换用户</button>
+
+  <!--网站布局的语义化标签：header:页眉; nav：导航栏；main:主内容，各种子内容可用artical、section、div；aside侧边栏，经常嵌套在main中，footer：页脚-->
+  <!--可以有全局的header，也可以某个article或section的header-->
+  <header>
+    <h1>本站所有网页的统一主标题</h1>
+  </header>
+  <!--nav为主导航栏，不应包含二级链接等内容-->
+  <nav>
     <ul>
-      <li>无序列表1</li>
-      <li>无序列表2</li>
+      <li><a href="#">栏目1</a></li>
+      <li><a href="#">栏目2</a></li>
     </ul>
-    <!--ol表示序列表-->
-    <ol>
-      <li>有序列表1</li>
-      <li>有序列表2</li>
-    </ol>
-    <!--dl表示描述列表-->
-    <dl>
-      <dt>描述列表term1</dt>
-      <dd>描述列表description1</dd>
-      <dt>描述列表term2</dt>
-      <dd>描述列表description2.1</dd>
-      <dd>描述列表description2.2</dd>
-    </dl>
-
-    <!--链接a元素：1."访问仓库"比"点击这里"是更好的链接描述，尽可能短，搜索引擎和用户都更好懂 2.title属性，对键盘操作浏览网页的人无用-->
-    <a href="https://github.com/zhouxu1984/zzCode" title="代码仓库地址" target="_blank">访问仓库</a>
-    <a href="https://github.com/zhouxu1984/zzCode" target="_blank">
-      <img src="images/logo.png" alt="这是一个图片链接" />
-    </a>
-    <!--尽可能使用相对链接;链接到非HTML资源时尽量留下清晰的提示-->
-    <a href="images/logo.png">访问logo图片(PNG,8KB)</a>
-    <a href="#heading1">这是一个指向文档片段h1的链接</a>
-    <!--在下载链接时使用download属性来提供默认的保存文件名，只适用于同源URL（协议、主机、端口相同）-->
-    <a href="../git/basicGit.txt" download="git.txt">下载git命令(txt,7KB)</a>
-    <!--电子邮件链接-->
-    <a href="mailto:gistarbird@163.com">发邮件给作者</a>
-
-    <!--引用，分为块引用和行内引用 cite属性默认不会显示，引用来源显示用cite元素-->
-    <p>
-      根据
-      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target="_blank"> <cite>MDN blockquote 网页</cite></a
-      >:
-    </p>
-    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
-      <p>
-        The <strong>HTML Element — <code>&lt;blockquote&gt;</code> </strong>表示包括的内容是外部引用
-      </p>
-    </blockquote>
-    <p>
-      The <strong>quote element — <code>&lt;q&gt;</code></strong>
-      <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">用来表示短引用</q>
-    </p>
-
-    <!--缩略语abbr，acronym基本废弃，用abbr就可以-->
-    <p>用"缩略语"<abbr title="超文本标记语言（Hypertext Markup Language）">HTML</abbr>来组织网页文档</p>
-
-    <!--address用于标记编写该HTML文档的人联系方式-->
-    <address><p>作者地址：zz,中国北京</p></address>
-
-    <!--sub元素表示下标，sup元素表示上标-->
-    <p>3<sup>2</sup>=9; H<sub>2</sub>O表示水;</p>
-
-    <!--计算机代码相关元素：code：代码；pre：保留空白字符，用于代码块；var：用于变量名；kbd：键盘输入；samp:标记计算机程序的输出-->
-    <pre><code>let headingName = document.querySelector('h1');</code></pre>
-    <p>上述代码<var>headingName</var>是一个变量,按<kbd>Ctrl</kbd>+<kbd>S</kbd>保存当前页面</p>
-    <p>程序输出是:<samp>the result is：5.</samp></p>
-
-    <!--time元素标记时间和日期-->
-    <!-- 标准简单日期 -->
-    <time datetime="2016-01-20">20 January 2016</time>
-    <!-- 只包含年份和月份-->
-    <time datetime="2016-01">January 2016</time>
-    <!-- 只包含月份和日期 -->
-    <time datetime="01-20">20 January</time>
-    <!-- 只包含时间，小时和分钟数 -->
-    <time datetime="19:30">19:30</time>
-    <!-- 还可包含秒和毫秒 -->
-    <time datetime="19:30:01.856">19:30:01.856</time>
-    <!-- 日期和时间 -->
-    <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
-    <!-- 含有时区偏移值的日期时间 -->
-    <time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
-    <!-- 调用特定的周 -->
-    <time datetime="2016-W04">The fourth week of 2016</time>
-
-    <!--button表示按钮-->
-    <button>切换用户</button>
-
-    <!--网站布局的语义化标签：header:页眉; nav：导航栏；main:主内容，各种子内容可用artical、section、div；aside侧边栏，经常嵌套在main中，footer：页脚-->
-    <!--可以有全局的header，也可以某个article或section的header-->
-    <header><h1>本站所有网页的统一主标题</h1></header>
-    <!--nav为主导航栏，不应包含二级链接等内容-->
-    <nav>
+  </nav>
+  <!--每个页面一般只用一次main，且直接位于body中，不要嵌套进其他元素-->
+  <main>
+    <!--也可以一个section包括多个article，看上下文-->
+    <article>
+      <h2>文章标题</h2>
+      <section>
+        <h3>小节标题</h3>
+        文章小节1
+      </section>
+      <section>
+        <h3>小节标题</h3>
+        文章小节2
+      </section>
+    </article>
+    <!--asider通常包含一些间接信息，如术语条目、作者简介、相关链接等-->
+    <aside>
+      <h2>侧边栏相关链接</h2>
       <ul>
-        <li><a href="#">栏目1</a></li>
-        <li><a href="#">栏目2</a></li>
+        <li><a>超链接1</a></li>
+        <li><a>超链接2</a></li>
       </ul>
-    </nav>
-    <!--每个页面一般只用一次main，且直接位于body中，不要嵌套进其他元素-->
-    <main>
-      <!--也可以一个section包括多个article，看上下文-->
-      <article>
-        <h2>文章标题</h2>
-        <section>
-          <h3>小节标题</h3>
-          文章小节1
-        </section>
-        <section>
-          <h3>小节标题</h3>
-          文章小节2
-        </section>
-      </article>
-      <!--asider通常包含一些间接信息，如术语条目、作者简介、相关链接等-->
-      <aside>
-        <h2>侧边栏相关链接</h2>
-        <ul>
-          <li><a>超链接1</a></li>
-          <li><a>超链接2</a></li>
-        </ul>
-      </aside>
-    </main>
-    <!--footer包含页面的页脚-->
-    <footer>
-      <p>© 2050 某某保留所有权利</p>
-    </footer>
+    </aside>
+  </main>
+  <!--footer包含页面的页脚-->
+  <footer>
+    <p>© 2050 某某保留所有权利</p>
+  </footer>
 
-    <!--常用的无语义元素div和span，应配合使用class属性提供一些标签，使其易于查询-->
-    <!--span是内联inline的无语义元素，最好只用于无法找到更好的语义元素时使用，或不想增加特定的含义。-->
-    <p>一个普通的段落。<span class="editor-note">编辑批注内容</span></p>
-    <!--div是块级无语义元素，应只在没有更好的语义方案时才用它，很容易被滥用-->
-    <div class="shopping-cart">
-      <h2>购物车</h2>
-      <p>购物车相关内容</p>
-    </div>
+  <!--常用的无语义元素div和span，应配合使用class属性提供一些标签，使其易于查询-->
+  <!--span是内联inline的无语义元素，最好只用于无法找到更好的语义元素时使用，或不想增加特定的含义。-->
+  <p>一个普通的段落。<span class="editor-note">编辑批注内容</span></p>
+  <!--div是块级无语义元素，应只在没有更好的语义方案时才用它，很容易被滥用-->
+  <div class="shopping-cart">
+    <h2>购物车</h2>
+    <p>购物车相关内容</p>
+  </div>
 
-    <!--br：换行和hr：生成一条水平分割线-->
-    <hr />
-    <p>锄禾日当午<br />汗滴禾下土</p>
-    <hr />
+  <!--br：换行和hr：生成一条水平分割线-->
+  <hr />
+  <p>锄禾日当午<br />汗滴禾下土</p>
+  <hr />
 
-    <!--多媒体内容-->
-    <!--figure可以是几张图片、一段代码、音视频、方程、表格或其他，独立内容单元-->
-    <figure>
-      <!--尽量用相对路径，不要用指向别的网站的图片地址（hotlinking盗链）-->
-      <!--像img、video这样的元素有时称为替换元素，内容和尺寸由外部资源定义，而不是元素本身-->
-      <!--图片名称也要考虑语义性，搜索引擎好理解，另外，不要把文本放在图片里; 如果图片只是为了装饰，用CSS而不是HTML-->
-      <img src="images/dinosaur_small.jpg" alt="恐龙图片" title="MDN下载的恐龙图片" />
-      <figcaption>MDN下载的一只霸王龙化石图片</figcaption>
-    </figure>
-    <!--HTML5包括video和audio标签，controls是播放器，没有都播放不了，video标签内的段落是后备内容-->
-    <video src="media/videos/rabbit320.webm" controls>
-      <p>你的浏览器不支持HTML5视频，可<a href="media/videos/rabbit320.mp4">点此观看视频</a></p>
-    </video>
-    <!--使用多种格式兼容不同浏览器-->
-    <!--autoplay:音视频立即自动播放；loop:循环播放；muted:播放时默认关闭声音；poster：视频播放前指向的一个图像URL,开启autoplay就看不到了;
+  <!--多媒体内容-->
+  <!--figure可以是几张图片、一段代码、音视频、方程、表格或其他，独立内容单元-->
+  <figure>
+    <!--尽量用相对路径，不要用指向别的网站的图片地址（hotlinking盗链）-->
+    <!--像img、video这样的元素有时称为替换元素，内容和尺寸由外部资源定义，而不是元素本身-->
+    <!--图片名称也要考虑语义性，搜索引擎好理解，另外，不要把文本放在图片里; 如果图片只是为了装饰，用CSS而不是HTML-->
+    <img src="images/dinosaur_small.jpg" alt="恐龙图片" title="MDN下载的恐龙图片" />
+    <figcaption>MDN下载的一只霸王龙化石图片</figcaption>
+  </figure>
+  <!--HTML5包括video和audio标签，controls是播放器，没有都播放不了，video标签内的段落是后备内容-->
+  <video src="media/videos/rabbit320.webm" controls>
+    <p>你的浏览器不支持HTML5视频，可<a href="media/videos/rabbit320.mp4">点此观看视频</a></p>
+  </video>
+  <!--使用多种格式兼容不同浏览器-->
+  <!--autoplay:音视频立即自动播放；loop:循环播放；muted:播放时默认关闭声音；poster：视频播放前指向的一个图像URL,开启autoplay就看不到了;
     preload：（none不缓冲，auto页面加载后缓存媒体文件，metadata仅缓冲文件的元数据）-->
-    <video controls loop muted poster="images/dinosaur_small.jpg" preload="metadata">
-      <source src="media/videos/rabbit320.webm" type="video/webm" />
-      <source src="media/videos/rabbit320.mp4" type="video/mp4" />
-      <p>你的浏览器不支持HTML5视频，可<a href="media/videos/rabbit320.mp4">点此观看视频</a></p>
-    </video>
-    <!--audio基本同video，但由于没有视觉部件，不可以设置width/height属性，不支持poster属性-->
-    <audio controls>
-      <source src="media/audios/viper.mp3" type="audio/mp3" />
-      <source src="media/audios/viper.ogg" type="audio/ogg" />
-      <p>你的浏览器不支持 HTML5 音频，可<a href="media/audios/viper.mp3">点此收听音频</a></p>
-    </audio>
-    <!--显示音轨文本WebVTT+track,没跑成功-->
-    <video controls>
-      <source src="media/videos/video.mp4" type="video/mp4" />
-      <source src="media/videos/video.webm" type="video/webm" />
-      <track kind="subtitles" src="media/videos/video_subtitles_en.vtt" srclang="en" />
-    </video>
-    <!--嵌入技术iframe,使用时注意安全和版权考量，如使用HTTPS（1.减少远程内容传输过程中被篡改的机会；2.防止嵌入式内容访问父文档内容，反之也是），
+  <video controls loop muted poster="images/dinosaur_small.jpg" preload="metadata">
+    <source src="media/videos/rabbit320.webm" type="video/webm" />
+    <source src="media/videos/rabbit320.mp4" type="video/mp4" />
+    <p>你的浏览器不支持HTML5视频，可<a href="media/videos/rabbit320.mp4">点此观看视频</a></p>
+  </video>
+  <!--audio基本同video，但由于没有视觉部件，不可以设置width/height属性，不支持poster属性-->
+  <audio controls>
+    <source src="media/audios/viper.mp3" type="audio/mp3" />
+    <source src="media/audios/viper.ogg" type="audio/ogg" />
+    <p>你的浏览器不支持 HTML5 音频，可<a href="media/audios/viper.mp3">点此收听音频</a></p>
+  </audio>
+  <!--显示音轨文本WebVTT+track,没跑成功-->
+  <video controls>
+    <source src="media/videos/video.mp4" type="video/mp4" />
+    <source src="media/videos/video.webm" type="video/webm" />
+    <track kind="subtitles" src="media/videos/video_subtitles_en.vtt" srclang="en" />
+  </video>
+  <!--嵌入技术iframe,使用时注意安全和版权考量，如使用HTTPS（1.减少远程内容传输过程中被篡改的机会；2.防止嵌入式内容访问父文档内容，反之也是），
     一般绝不使用http嵌入第三方内容（iframe的src地址应该是https的）；sandbox在现代高版本浏览器才有用，提高安全设置，应始终使用，如果绝对需要，可使用
     sandbox=""逐个添加权限，但allow-scripts和allow-same-origin不能同时添加,否则嵌入式内容可通过脚本绕过安全策略完全关闭sandbox-->
-    <!--为了提高速度，在主内容加载完后，使用JS设置iframe的src是个好主意，可减少官方页面加载时间（SEO重要指标）-->
-    <!--尺寸和frameborder设置可优先用CSS，allowfullscreen设置则iframe可通过全屏API设置成全屏模式-->
-    <!--配置CSP（内容安全策略）X-Frame-Options（DENY或SAMEORIGIN）,可防止其他网站嵌入您的网页内容（可能导致点击和一系列其他攻击）,一般在
+  <!--为了提高速度，在主内容加载完后，使用JS设置iframe的src是个好主意，可减少官方页面加载时间（SEO重要指标）-->
+  <!--尺寸和frameborder设置可优先用CSS，allowfullscreen设置则iframe可通过全屏API设置成全屏模式-->
+  <!--配置CSP（内容安全策略）X-Frame-Options（DENY或SAMEORIGIN）,可防止其他网站嵌入您的网页内容（可能导致点击和一系列其他攻击）,一般在
     Apache、nginx、IIS、HAProxy、Express等中配置-->
-    <!--中间p提供的是备选内容-->
-    <iframe src="file:///H:/zzCode/HTML/basicHTML.html" width="500" height="500" allowfullscreen sandbox="allow-scripts allow-same-origin">
-    </iframe>
-    <!--embed和object元素，传统的插件嵌入方法，嵌入像Java小程序、Flash、PDF、视频、SVG、图像等，已基本过时
+  <!--中间p提供的是备选内容-->
+  <iframe src="file:///H:/zzCode/HTML/basicHTML.html" width="500" height="500" allowfullscreen
+    sandbox="allow-scripts allow-same-origin">
+  </iframe>
+  <!--embed和object元素，传统的插件嵌入方法，嵌入像Java小程序、Flash、PDF、视频、SVG、图像等，已基本过时
     <object data="media/pdf/mypdf.pdf" type="application/pdf" width="500" height="500">
       <p>You don't have a PDF plugin, but you can <a href="media/pdf/mypdf.pdf">download the PDF file.</a></p>
     </object>
     -->
 
-    <!--svg（用于描述矢量图像的xml语言）
+  <!--svg（用于描述矢量图像的xml语言）
       1.优点：相对栅格图像有更小的体积，放大更清晰；其中的文本仍然可访问（利于SEO）；可以很好的适应css和js
       2.缺点：非常容易变得复杂，复杂的svg会占用浏览器长的处理时间；旧版本的IE（9之前）不支持；比栅格图像更难创建。
     -->
-    <!--通过img引入svg，优点：可以通过在a元素嵌套img，使图像轻松地成为超链接；缺点：无法使用JS操作图像，不能用CSS伪类来重设图像样式。-->
-    <img src="images/host.svg" alt="server的svg" width="100" height="100" />
-    <!--用srcset属性，支持svg的浏览器用srcset的svg，不支持svg的老浏览器用src的png-->
-    <img src="images/logo.png" srcset="images/host.svg" alt="server的svg" width="100" height="100" />
-    <!--内联SVG,优点：减少HTTP请求，可用外部CSS，CSS交互，可被a包含成为链接；缺点：不适用与多个地方使用，增加HTML大小，浏览器无法缓存内联svg-->
-    <svg width="300" height="200">
-      <rect width="100%" height="100%" fill="green"></rect>
-    </svg>
-    <!--iframe嵌入svg，不推荐使用-->
-    <iframe src="images/host.svg" width="100" height="100" sandbox=""></iframe>
+  <!--通过img引入svg，优点：可以通过在a元素嵌套img，使图像轻松地成为超链接；缺点：无法使用JS操作图像，不能用CSS伪类来重设图像样式。-->
+  <img src="images/host.svg" alt="server的svg" width="100" height="100" />
+  <!--用srcset属性，支持svg的浏览器用srcset的svg，不支持svg的老浏览器用src的png-->
+  <img src="images/logo.png" srcset="images/host.svg" alt="server的svg" width="100" height="100" />
+  <!--内联SVG,优点：减少HTTP请求，可用外部CSS，CSS交互，可被a包含成为链接；缺点：不适用与多个地方使用，增加HTML大小，浏览器无法缓存内联svg-->
+  <svg width="300" height="200">
+    <rect width="100%" height="100%" fill="green"></rect>
+  </svg>
+  <!--iframe嵌入svg，不推荐使用-->
+  <iframe src="images/host.svg" width="100" height="100" sandbox=""></iframe>
 
-    <!--响应式图片,img的srcset和sizes，从sizes里自动选一个视窗宽度，从srcset自动选一个最接近的尺寸-->
-    <!--srcset指定允许浏览器选择的图像集-->
-    <!--sizes定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择,注意顺序，匹配成功后面都会失效-->
-    <!--在 Chrome 中测试时，通过如下方式禁用缓存：打开 DevTools ，并选中 Settings > Preferences > Network下Disable cache的选择框。否则，Chrome 会优先选择缓存图片而不是恰好适配的那个。-->
-    <img
-      srcset="images/elva-fairy-320w.jpg 320w, images/elva-fairy-480w.jpg 480w, images/elva-fairy-640w.jpg 640w"
-      sizes="(max-width:320px) 280px, (max-width:480px) 440px, 640px"
-      src="images/elva-fairy-640w.jpg"
-      alt="响应式布局的图片"
-    />
-    <!--用picture元素，类似video和audio,不要使用media属性，除非需要美术设计-->
-    <picture>
-      <source media="(max-width: 400px)" srcset="images/elva-fairy-320w.jpg" />
-      <source media="(min-width: 401px)" srcset="images/elva-fairy-480w.jpg" />
-      <img src="images/elva-fairy-800w.jpg" alt="Chris standing up holding his daughter Elva" />
-    </picture>
+  <!--响应式图片,img的srcset和sizes，从sizes里自动选一个视窗宽度，从srcset自动选一个最接近的尺寸-->
+  <!--srcset指定允许浏览器选择的图像集-->
+  <!--sizes定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择,注意顺序，匹配成功后面都会失效-->
+  <!--在 Chrome 中测试时，通过如下方式禁用缓存：打开 DevTools ，并选中 Settings > Preferences > Network下Disable cache的选择框。否则，Chrome 会优先选择缓存图片而不是恰好适配的那个。-->
+  <img srcset="images/elva-fairy-320w.jpg 320w, images/elva-fairy-480w.jpg 480w, images/elva-fairy-640w.jpg 640w"
+    sizes="(max-width:320px) 280px, (max-width:480px) 440px, 640px" src="images/elva-fairy-640w.jpg" alt="响应式布局的图片" />
+  <!--用picture元素，类似video和audio,不要使用media属性，除非需要美术设计-->
+  <picture>
+    <source media="(max-width: 400px)" srcset="images/elva-fairy-320w.jpg" />
+    <source media="(min-width: 401px)" srcset="images/elva-fairy-480w.jpg" />
+    <img src="images/elva-fairy-800w.jpg" alt="Chris standing up holding his daughter Elva" />
+  </picture>
 
-    <hr />
-    <!--表格：th表示表头，默认粗体和居中-->
-    <table class="basicTable">
-      <!--用caption，不用summary（被HTML5废除）-->
-      <caption>
-        表格标题
-      </caption>
-      <colgroup>
-        <col />
-        <col style="background-color: blueviolet;" />
-        <col style="background-color: cornflowerblue;" span="2" />
-      </colgroup>
-      <thead>
-        <tr>
-          <th>&nbsp;</th>
-          <th>列表头1</th>
-          <th>列表头2</th>
-          <th>列表头3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th rowspan="2" scope="row">行表头1</th>
-          <td>1行2列</td>
-          <td>1行3列</td>
-          <td>1行4列</td>
-        </tr>
-        <tr>
-          <td>2行2列</td>
-          <td>2行3列</td>
-          <td>2行4列</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <!--scope有用于行或列的标题th，四个值： row | col | colgroup | rowgroup-->
-          <!--精确控制td和th关系可以用id+headers属性，th里指定id，对应的td里用headers指定对应th的id，多个用空格隔开-->
-          <th scope="row">行表头2</th>
-          <td colspan="3">3行</td>
-        </tr>
-      </tfoot>
-    </table>
+  <hr />
+  <!--表格：th表示表头，默认粗体和居中-->
+  <table class="basicTable">
+    <!--用caption，不用summary（被HTML5废除）-->
+    <caption>
+      表格标题
+    </caption>
+    <colgroup>
+      <col />
+      <col style="background-color: blueviolet;" />
+      <col style="background-color: cornflowerblue;" span="2" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>列表头1</th>
+        <th>列表头2</th>
+        <th>列表头3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="2" scope="row">行表头1</th>
+        <td>1行2列</td>
+        <td>1行3列</td>
+        <td>1行4列</td>
+      </tr>
+      <tr>
+        <td>2行2列</td>
+        <td>2行3列</td>
+        <td>2行4列</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <!--scope有用于行或列的标题th，四个值： row | col | colgroup | rowgroup-->
+        <!--精确控制td和th关系可以用id+headers属性，th里指定id，对应的td里用headers指定对应th的id，多个用空格隔开-->
+        <th scope="row">行表头2</th>
+        <td colspan="3">3行</td>
+      </tr>
+    </tfoot>
+  </table>
 
-    <hr />
-    <!--表单form：表单越大，失去用户的风险越大，保持简单，保持专注，只要求必要的数据；禁止表单嵌套-->
-    <form action="" method="POST">
+  <hr />
+  <!--表单form：表单越大，失去用户的风险越大，保持简单，保持专注，只要求必要的数据；禁止表单嵌套-->
+  <form action="" method="POST">
+    <div>
+      <label for="name">Name: <abbr title="required">*</abbr></label>
+      <input type="text" id="name" name="user_name" value="default name" />
+    </div>
+    <div>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="user_email" />
+    </div>
+    <div>
+      <label for="msg">Message:</label>
+      <textarea id="msg" name="user_message"></textarea>
+    </div>
+    <!--fieldset用于给表单控件进行分段，比如一组单选按钮-->
+    <fieldset>
+      <legend>Gender:</legend>
       <div>
-        <label for="name">Name: <abbr title="required">*</abbr></label>
-        <input type="text" id="name" name="user_name" value="default name" />
+        <input type="radio" name="gender" id="gender_1" value="male" />
+        <label for="gender_1">Male</label>
       </div>
       <div>
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="user_email" />
+        <input type="radio" name="gender" id="gender_2" value="female" />
+        <label for="gender_2">FeMale</label>
       </div>
-      <div>
-        <label for="msg">Message:</label>
-        <textarea id="msg" name="user_message"></textarea>
-      </div>
-      <!--fieldset用于给表单控件进行分段，比如一组单选按钮-->
-      <fieldset>
-        <legend>Gender:</legend>
-        <div>
-          <input type="radio" name="gender" id="gender_1" value="male" />
-          <label for="gender_1">Male</label>
-        </div>
-        <div>
-          <input type="radio" name="gender" id="gender_2" value="female" />
-          <label for="gender_2">FeMale</label>
-        </div>
-      </fieldset>
-      <div class="button">
-        <!--button的type选项三种：submit（提交到form的action）、reset（表单控件恢复到默认值）、button（JS处理）-->
-        <button type="submit">Send your Message</button>
-      </div>
-    </form>
-    <hr />
-    <!--各种表单小部件-->
-    <!--通用属性：autofocus（默认false）；disabled（默认false）-->
-    <!--单行文本框-->
-    <input type="text" id="textSample" name="textSample" value="i am text input" />
-    <!--E-mail地址框, multiple允许输入多个邮件地址，以逗号分隔-->
-    <input type="email" id="emailSample" name="emailSample" multiple />
-    <!--密码框-->
-    <input type="password" id="passwordSample" name="passwordSample" />
-    <!--搜索框-->
-    <input type="search" id="searchSample" name="searchSample" />
-    <!--电话号码栏,主要是语义，没有输入限制-->
-    <input type="tel" id="telSample" name="telSample" />
-    <!--URI栏-->
-    <input type="url" id="urlSample" name="urlSample" />
-    <!--多行文本框,与text的input的区别：允许输入包含换行符的文本，只接受文本内容，中间文本内容为默认值-->
-    <textarea cols="10" rows="5"></textarea>
-    <!--下拉内容-->
-    <select id="selectSample" name="selectSample">
+    </fieldset>
+    <div class="button">
+      <!--button的type选项三种：submit（提交到form的action）、reset（表单控件恢复到默认值）、button（JS处理）-->
+      <button type="submit">Send your Message</button>
+    </div>
+  </form>
+  <hr />
+  <!--各种表单小部件-->
+  <!--通用属性：autofocus（默认false）；disabled（默认false）-->
+  <!--单行文本框-->
+  <input type="text" id="textSample" name="textSample" value="i am text input" />
+  <!--E-mail地址框, multiple允许输入多个邮件地址，以逗号分隔-->
+  <input type="email" id="emailSample" name="emailSample" multiple />
+  <!--密码框-->
+  <input type="password" id="passwordSample" name="passwordSample" />
+  <!--搜索框-->
+  <input type="search" id="searchSample" name="searchSample" />
+  <!--电话号码栏,主要是语义，没有输入限制-->
+  <input type="tel" id="telSample" name="telSample" />
+  <!--URI栏-->
+  <input type="url" id="urlSample" name="urlSample" />
+  <!--多行文本框,与text的input的区别：允许输入包含换行符的文本，只接受文本内容，中间文本内容为默认值-->
+  <textarea cols="10" rows="5"></textarea>
+  <!--下拉内容-->
+  <select id="selectSample" name="selectSample">
+    <option>1</option>
+    <option selected>2</option>
+    <option>3</option>
+  </select>
+  <!--默认提交value值，没有才是内容文本-->
+  <select id="selectSample2" name="selectSample2">
+    <optgroup label="number">
       <option>1</option>
-      <option selected>2</option>
-      <option>3</option>
-    </select>
-    <!--默认提交value值，没有才是内容文本-->
-    <select id="selectSample2" name="selectSample2">
-      <optgroup label="number">
-        <option>1</option>
-        <option>2</option>
-      </optgroup>
-      <optgroup label="people">
-        <option>jack</option>
-        <option value="170">marry</option>
-      </optgroup>
-    </select>
-    <!--多选选择框-->
-    <select multiple id="multiSelect" name="multiSelect">
-      <option>a</option>
-      <option>b</option>
-      <option>c</option>
-    </select>
-    <!--自动补全输入框,datalist在IE10以下版本不支持-->
-    <label for="fruitSample">What's your favorite fruit?</label>
-    <input type="text" id="fruitSample" name="fruitSample" list="suggestSample" />
-    <datalist id="suggestSample">
-      <option>Apple</option>
-      <option>Banana</option>
-      <option>BlackBerry</option>
-      <option>Lemon</option>
-    </datalist>
-    <!--可选中项-->
-    <!--复选框-->
-    <input type="checkbox" checked id="checkboxSample" name="checkboxSample" value="checkboxValue" />
-    <!--单选按钮: 相同name属性的radio，为一组单选按钮-->
-    <input type="radio" checked id="radioSample" name="radioSample" />
-    <!--按钮 两种区别：button内容可以不仅是文字，可以是HTML-->
-    <!--submit-->
-    <button type="submit">submit button</button>
-    <input type="submit" value="input submit button" />
-    <!--reset-->
-    <button type="reset">reset button</button>
-    <input type="reset" value="input reset button" />
-    <!--button-->
-    <button type="button">anonymous button</button>
-    <input type="button" value="input anonymous button" />
-    <!--数字,iE10以下不支持-->
-    <input type="number" name="numberSample" id="numberSample" min="1" max="10" step="2" />
-    <!--滑块,iE10以下不支持-->
-    <input type="range" name="rangeSample" id="rangeSample" min="0" max="500" step="10" />
-    <!--日期时间选择器，Chrome、Edge、Opera支持，iE不支持，Firefox和Safari不太支持-->
-    <!--本地时间-->
-    <input type="datetime-local" name="datetimeSample" id="datetimeSample" />
-    <!--月-->
-    <input type="month" name="monthSample" id="monthSample" />
-    <!--时间-->
-    <input type="time" name="timeSample" id="timeSample" />
-    <!--星期-->
-    <input type="week" name="weekSample" id="weekSample" />
-    <!--所有日期和时间控制都可以使用min和max属性来约束-->
-    <input type="date" name="myDate" min="2019-06-01" max="2019-08-31" id="dateSample" />
-    <!--拾色器-->
-    <input type="color" name="colorSample" id="colorSample" />
-    <!--文件选择器-->
-    <input type="file" name="fileSample" id="fileSample" accept="image/*" multiple />
-    <!--隐藏内容-->
-    <input type="hidden" name="hiddenSample" id="hiddenSample" value="12345" />
-    <!--图像按钮-->
-    <input type="image" alt="Click me" src="images/logo.png" />
-    <!--进度条，除了iE都能很好的支持-->
-    <progress max="100" value="75">75/100</progress>
-    <!--仪表，除了iE都能很好的支持-->
-    <meter min="0" max="100" value="75" low="33" high="66" optimum="10">75</meter>
-    <!--发送文件-->
-    <form method="post" enctype="multipart/form-data">
-      <div>
-        <label for="filePostSample">选择文件</label>
-        <input type="file" name="filePostSample" id="filePostSample" />
-      </div>
-      <div>
-        <button>发送文件</button>
-      </div>
-    </form>
-    <!--使用内置表单进行数据校验-->
-    <!--required属性、pattern正则表达式、-->
-    <form>
-      <label for="requiredSample">必填字段</label>
-      <input type="text" name="requiredSample" id="requiredSample" required pattern="a*" minlength="3" maxlength="10" />
-      <button>提交</button>
-    </form>
+      <option>2</option>
+    </optgroup>
+    <optgroup label="people">
+      <option>jack</option>
+      <option value="170">marry</option>
+    </optgroup>
+  </select>
+  <!--多选选择框-->
+  <select multiple id="multiSelect" name="multiSelect">
+    <option>a</option>
+    <option>b</option>
+    <option>c</option>
+  </select>
+  <!--自动补全输入框,datalist在IE10以下版本不支持-->
+  <label for="fruitSample">What's your favorite fruit?</label>
+  <input type="text" id="fruitSample" name="fruitSample" list="suggestSample" />
+  <datalist id="suggestSample">
+    <option>Apple</option>
+    <option>Banana</option>
+    <option>BlackBerry</option>
+    <option>Lemon</option>
+  </datalist>
+  <!--可选中项-->
+  <!--复选框-->
+  <input type="checkbox" checked id="checkboxSample" name="checkboxSample" value="checkboxValue" />
+  <!--单选按钮: 相同name属性的radio，为一组单选按钮-->
+  <input type="radio" checked id="radioSample" name="radioSample" />
+  <!--按钮 两种区别：button内容可以不仅是文字，可以是HTML-->
+  <!--submit-->
+  <button type="submit">submit button</button>
+  <input type="submit" value="input submit button" />
+  <!--reset-->
+  <button type="reset">reset button</button>
+  <input type="reset" value="input reset button" />
+  <!--button-->
+  <button type="button">anonymous button</button>
+  <input type="button" value="input anonymous button" />
+  <!--数字,iE10以下不支持-->
+  <input type="number" name="numberSample" id="numberSample" min="1" max="10" step="2" />
+  <!--滑块,iE10以下不支持-->
+  <input type="range" name="rangeSample" id="rangeSample" min="0" max="500" step="10" />
+  <!--日期时间选择器，Chrome、Edge、Opera支持，iE不支持，Firefox和Safari不太支持-->
+  <!--本地时间-->
+  <input type="datetime-local" name="datetimeSample" id="datetimeSample" />
+  <!--月-->
+  <input type="month" name="monthSample" id="monthSample" />
+  <!--时间-->
+  <input type="time" name="timeSample" id="timeSample" />
+  <!--星期-->
+  <input type="week" name="weekSample" id="weekSample" />
+  <!--所有日期和时间控制都可以使用min和max属性来约束-->
+  <input type="date" name="myDate" min="2019-06-01" max="2019-08-31" id="dateSample" />
+  <!--拾色器-->
+  <input type="color" name="colorSample" id="colorSample" />
+  <!--文件选择器-->
+  <input type="file" name="fileSample" id="fileSample" accept="image/*" multiple />
+  <!--隐藏内容-->
+  <input type="hidden" name="hiddenSample" id="hiddenSample" value="12345" />
+  <!--图像按钮-->
+  <input type="image" alt="Click me" src="images/logo.png" />
+  <!--进度条，除了iE都能很好的支持-->
+  <progress max="100" value="75">75/100</progress>
+  <!--仪表，除了iE都能很好的支持-->
+  <meter min="0" max="100" value="75" low="33" high="66" optimum="10">75</meter>
+  <!--发送文件-->
+  <form method="post" enctype="multipart/form-data">
+    <div>
+      <label for="filePostSample">选择文件</label>
+      <input type="file" name="filePostSample" id="filePostSample" />
+    </div>
+    <div>
+      <button>发送文件</button>
+    </div>
+  </form>
+  <!--使用内置表单进行数据校验-->
+  <!--required属性、pattern正则表达式、-->
+  <form>
+    <label for="requiredSample">必填字段</label>
+    <input type="text" name="requiredSample" id="requiredSample" required pattern="a*" minlength="3" maxlength="10" />
+    <button>提交</button>
+  </form>
 
-    <!--外部script的引用，放在/body之前更好-->
-    <script src="JavaScript/basicJS.js" defer></script>
-  </body>
+  <!--外部script的引用，放在/body之前更好-->
+  <script src="JavaScript/basicJS.js" defer></script>
+</body>
+
 </html>
