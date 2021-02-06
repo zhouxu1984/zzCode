@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="./lib/leaflet.css" />
         <script src="./lib/leaflet.js"></script>
+        <script src="./lib/leaflet-tilelayer-wmts-src.js"></script>
         <link rel="stylesheet" href="./css/custom.css" />
         <script src="./js/LeafletApp.js"></script>
     </head>
@@ -12,8 +13,27 @@
     </body>
 
     <script>
-        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+        // use local gwc wmts service: http://localhost:8080/geowebcache/service/wmts     layer = 0
+        var mymap = L.map('mapid').setView([0, 0], 1);
+        var wmtsUrl = 'http://localhost:8080/geowebcache/service/wmts';
+        var wmtsLayer = new L.TileLayer.WMTS(wmtsUrl, 
+        {
+            layer: "0",
+            format: "image/png",
+            tilematrixSet: "EPSG:4326"
+        });
 
+        //L.control.scale({'position':'topleft','metric':true,'imperial':false}).addTo(mymap);
+
+        mymap.addLayer(wmtsLayer);
+
+        // var baseLayers = {"gwc wmts world" : wmtsLayer};
+
+        // L.control.layers(baseLayers, {}).addTo(mymap); 
+
+
+        /* quick start guide
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
@@ -58,6 +78,6 @@
             popup.setLatLng(e.latlng).setContent("你点击的坐标是：" + e.latlng.toString()).openOn(mymap);
         }
         mymap.on('click', onMapClick);
-
+        */
     </script>
 </html>
