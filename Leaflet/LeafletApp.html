@@ -15,10 +15,10 @@
     <script>
         // use local gwc wmts service: http://localhost:8080/geowebcache/service/wmts     layer = 0
         var mymap = L.map('mapid').setView([0, 0], 1);
-        var wmtsUrl = 'http://localhost:8080/geowebcache/service/wmts';
+        var wmtsUrl = 'http://icenter.geovis.online/tilecache/service/wmts?layer=Macao_1994-PNG-4326';
         var wmtsLayer = new L.TileLayer.WMTS(wmtsUrl, 
         {
-            layer: "0",
+            layer: "Macao_1994-PNG-4326",
             format: "image/png",
             tilematrixSet: "EPSG:4326"
         });

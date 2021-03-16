@@ -59,6 +59,7 @@ git branch dev   &   git checkout dev    // 同上
 git switch -c dev   // 同上
 git switch dev // 同git checkout dev
 git branch   // 查看当前分支
+git branch -a // 查看远程所有分支
 git merge dev   // 将dev分支的修改合并到当前分支, 默认会用Fast forward模式合并，删除分支会丢掉分支信息
 git branch -d dev   // 删掉dev分支
 git branch -D dev   // 强行删除dev分支（某些新建了文件没有合并过的分支，删除时需要用这个）
