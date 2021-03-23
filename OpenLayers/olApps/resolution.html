@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OpenLayers默认使用的分辨率</title>
+    <link rel="stylesheet" href="../v6.5.0/css/ol.css" />
+    <style>
+        .map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+    <script src="../v6.5.0/build/ol.js"></script>
+</head>
+<body>
+    <div id='map' class="map"></div>
+    <div><span>当前层级:</span><span id='zoom'></span><span>分辨率:</span><span id='resolution'></span></div>
+
+    <script type="text/javascript">
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([104,30]),
+                zoom: 10
+            })
+        });
+
+        map.getView().on('change:resolution', function(){
+            document.getElementById('zoom').innerHTML =  this.getZoom() + '，';
+            document.getElementById('resolution').innerHTML = this.getResolution();
+        })
+        
+        document.getElementById('zoom').innerHTML = map.getView().getZoom() + '，';
+        document.getElementById('resolution').innerHTML = + map.getView().getResolution();
+    </script>
+</body>
