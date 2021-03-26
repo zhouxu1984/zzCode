@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>加载本地的geojson文件</title>
+        <link rel='stylesheet' href='../v6.5.0/css/ol.css' />
+        <style>
+            .map {
+                width: 100%;
+                height: 600px;
+            }
+        </style>
+        <script src='../v6.5.0/build/ol.js'></script>
+    </head>
+    <body>
+        <div id='map' class='map'></div>
+
+        <script>
+            var map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    }),
+                    new ol.layer.Vector({
+                        source: new ol.source.Vector({
+                            url: '../v6.5.0/examples/geojson/countries-110m.geojson',
+                            format: new ol.format.GeoJSON()
+                        }),
+                        style: new ol.style.Style({                            // 自定义矢量地图样式
+                            stroke: new ol.style.Stroke({
+                                color: 'red',
+                                width: 5
+                        })
+                    })
+                    })
+                ],
+                view: new ol.View({
+                    center: [0, 0],
+                    zoom: 0
+                })
+            });
+        </script>
+    </body>
+</html>

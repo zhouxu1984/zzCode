@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加载OpenStreetMap</title>
+    <link rel='stylesheet' href='../v6.5.0/css/ol.css' />
+    <style>
+        .map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+    <script src='../v6.5.0/build/ol.js'></script>
+</head>
+<body>
+    <div id='map' class='map'></div>
+
+    <script>
+        // 初始化一个点要素
+        var pointFeature = new ol.Feature({
+            geometry: new ol.geom.Point([12958998, 4852221]),
+            name: '点要素'
+        });
+
+        //初始化一个线要素
+        var lineFeature = new ol.Feature({
+            geometry: new ol.geom.LineString([[11590147, 4322577], [13594369, 3872784]]),
+            name: '线要素'
+        });
+
+        //初始化一个多边形要素
+        var polygonFeature = new ol.Feature({
+            geometry: new ol.geom.Polygon([[[11801814, 3251012], [14057391, 2748303], [12714628, 1346008], [11801814, 3251012]]]),
+            name: '多边形要素'
+        });
+
+        // 初始化一个矢量数据源，并添加上面创建的要素
+        var vectorSource = new ol.source.Vector();
+        vectorSource.addFeature(pointFeature);
+        vectorSource.addFeature(lineFeature);
+        vectorSource.addFeature(polygonFeature);
+
+        // 初始化一个矢量图层
+        var vectorLayer = new ol.layer.Vector({
+            source: vectorSource
+        });
+
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                }),
+                vectorLayer
+            ],
+            view: new ol.View({
+                center: [0, 0],
+                zoom: 0
+            })
+        });
+
+    </script>
+</body>
+</html>

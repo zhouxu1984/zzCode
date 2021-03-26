@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>使用XYZ的方式加载高德地图</title>
+        <link rel='stylesheet' href='../v6.5.0/css/ol.css' />
+        <style>
+            .map {
+                width: 100%;
+                height: 600px;
+            }
+        </style>
+        <script src='../v6.5.0/build/ol.js'></script>
+    </head>
+    <body>
+        <div id='map' class='map'></div>
+        <script>
+            var map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.XYZ({
+                            url:'http://webst0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}'
+                            /*
+                            目前高德的瓦片地址有如下两种：
+
+http://wprd0{1-4}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7和
+http://webst0{1-4}.is.autonavi.com/appmaptile?style=7&x={x}&y={y}&z={z}
+前者是高德的新版地址，后者是老版地址。
+
+高德新版的参数：
+
+lang可以通过zh_cn设置中文，en设置英文；
+size基本无作用；
+scl设置标注还是底图，scl=1代表注记，scl=2代表底图（矢量或者影像）；
+style设置影像和路网，style=6为影像图，style=7为矢量路网，style=8为影像路网。
+总结之：
+
+http://wprd0{1-4}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7 为矢量图（含路网、含注记）
+http://wprd0{1-4}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=2&style=7 为矢量图（含路网，不含注记）
+http://wprd0{1-4}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=6 为影像底图（不含路网，不含注记）
+http://wprd0{1-4}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=2&style=6 为影像底图（不含路网、不含注记）
+http://wprd0{1-4}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=8 为影像路图（含路网，含注记）
+http://wprd0{1-4}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=2&style=8 为影像路网（含路网，不含注记）
+高德旧版可以通过style参数设置影像、矢量、路网。
+
+总结之：
+
+http://webst0{1-4}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z} 为影像底图（不含路网，不含注记）
+http://webst0{1-4}.is.autonavi.com/appmaptile?style=7&x={x}&y={y}&z={z} 为矢量地图（含路网，含注记）
+http://webst0{1-4}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z} 为影像路网（含路网，含注记）
+                            */
+                        })
+                    })
+                ],
+                view: new ol.View({
+                    center: [0, 0],
+                    zoom: 3
+                })
+            });
+        </script>
+    </body>
+</html>

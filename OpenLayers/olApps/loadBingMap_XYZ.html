@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加载微软Bing中文地图</title>
+    <link rel='stylesheet' href='../v6.5.0/css/ol.css' />
+    <style>
+        .map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+    <script src='../v6.5.0/build/ol.js'></script>
+</head>
+<body>
+    <div id="map" class="map"></div>
+    
+    <script>
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.XYZ({
+                        tileUrlFunction: function(tileCoord){           //  实际出图上下拼接有问题
+                            let z = tileCoord[0];
+                            let x = tileCoord[1];
+                            let y = -tileCoord[2] - 1;
+                            let result='', zIndex=0;
+                    
+                            for(zIndex = 0; zIndex < z; zIndex++) {        
+                                result = ((x & 1) + 2 * (y & 1)).toString() + result;
+                                x >>= 1;
+                                y >>= 1;
+                            }
+                            return 'http://dynamic.t0.tiles.ditu.live.com/comp/ch/' + result + '?it=G,VE,BX,L,LA&mkt=zh-cn,syr&n=z&og=111&ur=CN';
+                        }
+                    })
+                })
+            ],
+            view: new ol.View({
+                center: [0, 0],
+                zoom: 3
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>使用XYZ的方式加载雅虎地图</title>
+        <link rel='stylesheet' href='../v6.5.0/css/ol.css' />
+        <style>
+            .map {
+                width: 100%;
+                height: 600px;
+            }
+        </style>
+        <script src='../v6.5.0/build/ol.js'></script>
+    </head>
+    <body>
+        <div id='map' class='map'></div>
+        <script>
+            var map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.XYZ({
+                            url:'https://{0-3}.base.maps.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/512/png8' + 
+                        '?lg=ENG&ppi=250&token=TrLJuXVK62IQk0vuXFzaig%3D%3D&requestid=yahoo.prod&app_id=eAdkWGYRoc4RfxVo0Z4B',
+                            tileSize: 512               // 设置对应的瓦片大小
+                        })
+                    })
+                ],
+                view: new ol.View({
+                    center: [0, 0],
+                    zoom: 3
+                })
+            });
+        </script>
+    </body>
+</html>
