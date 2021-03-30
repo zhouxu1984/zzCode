@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>WMTS Layer from Capabilities</title>
+    <link rel="stylesheet" href="../v6.5.0/css/ol.css" />
+    <style>
+        .map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+    <script src="../v6.5.0/build/ol.js"></script>
+</head>
+
+<body>
+    <div id='map' class='map'></div>
+
+    <script>
+        var parser = new ol.format.WMTSCapabilities();
+        var map;
+
+        fetch('http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetCapabilities')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (text) {
+                var result = parser.read(text);
+
+                var options = ol.source.WMTS.optionsFromCapabilities(result, {
+                    layer: 'nurc:Pk50095',
+                    matrixSet: 'EPSG:900913',
+                });
+
+                map = new ol.Map({
+                    target: 'map',
+                    layers: [
+                        new ol.layer.Tile({
+                            source: new ol.source.OSM(),
+                            opacity: 1
+                        }),
+                        new ol.layer.Tile({
+                            source: new ol.source.WMTS(options),
+                            opacity: 0.7
+                        })
+                    ],
+                    view: new ol.View({
+                        center: [1466944, 5909899],
+                        zoom: 11,
+                    })
+                });
+            });
+    </script>
+</body>
+
+</html>
