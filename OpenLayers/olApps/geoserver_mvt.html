@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>vector tiles</title>
+    <link rel="stylesheet" href="../v6.5.0/css/ol.css" />
+    <style>
+        .map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+    <script src="../v6.5.0/build/ol.js"></script>
+</head>
+
+<body>
+    <div id='map' class='map'></div>
+
+    <script>
+        var style_simple = new ol.style.Style({
+            fill: new ol.style.Fill({
+                color: '#ADD8E6'
+            }),
+            stoke: new ol.style.Stroke({
+                color: '#880000',
+                width: 1
+            })
+        });
+
+        function simpleStyle(feature) {
+            return style_simple;
+        }
+
+        //var layer = "nyc:nyc_streets";
+        //var projection_epsg_no = '900913';
+        var map = new ol.Map({
+            target: 'map',
+            view: new ol.View({
+                center: [-8229513, 4965634],    
+                zoom: 10
+            }),
+            layers:[
+                new ol.layer.VectorTile({
+                    style: simpleStyle,
+                    source: new ol.source.VectorTile({
+                        tilePixelRatio: 1,
+                        tileGrid: ol.tilegrid.createXYZ({maxZoom:19}),
+                        format: new ol.format.MVT(),
+                        url: "http://localhost:8080/geoserver/gwc/service/tms/1.0.0/nyc%3Anyc_streets@EPSG%3A4326@pbf/{z}/{x}/{-y}.pbf"   // 地址不对
+                    })
+                })
+            ]
+        });
+
+    </script>
+</body>
+
+</html>
