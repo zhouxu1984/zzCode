@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="./lib/Cesium/Widgets/widgets.css" rel="stylesheet" />
+    <style>
+        .scene {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+    <script src="./lib/Cesium/Cesium.js"></script>
+</head>
+
+<body>
+    <div id="cesiumContainer" class='scene'></div>
+
+    <script>
+        Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTYxZjU4ZS1iY2U2LTRiYWUtODRmZi1mMTk3NTVkYjAzNzYiLCJpZCI6MzIzMjcsInNjb3BlcyI6WyJhc2wiLCJhc3IiLCJhc3ciLCJnYyIsInByIl0sImlhdCI6MTU5Njc4MTI4OH0.bO8fe0WkJh_khwRu_blKMcRfaPGU_vQIhI5C7hdfq4Y";
+                   
+        const viewer = new Cesium.Viewer('cesiumContainer', {
+            terrainProvider: Cesium.createWorldTerrain()
+        });
+
+        const buildingTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
+
+        viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(-122.4175, 37.655, 400),
+            orientation: {
+                heading: Cesium.Math.toRadians(0.0),
+                pitch: Cesium.Math.toRadians(-15.0)
+            }
+        });
+
+    </script>
+</body>
+
+</html>
